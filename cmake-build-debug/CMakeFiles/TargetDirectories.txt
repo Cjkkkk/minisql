@@ -1,0 +1,4 @@
+/home/kk/CLionProjects/mini/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/kk/CLionProjects/mini/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/kk/CLionProjects/mini/cmake-build-debug/CMakeFiles/test.dir
+/home/kk/CLionProjects/mini/cmake-build-debug/CMakeFiles/my_wc.dir

@@ -1,0 +1,4 @@
+/home/kk/Downloads/clion-2017.3.1/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/usr/bin/make -DCMAKE_C_COMPILER=/usr/bin/gcc -DCMAKE_CXX_COMPILER=/usr/bin/g++ -G "CodeBlocks - Unix Makefiles" /home/kk/CLionProjects/mini
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/kk/CLionProjects/mini/cmake-build-debug

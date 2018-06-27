@@ -1,0 +1,1 @@
+/usr/bin/g++  -g   CMakeFiles/mini.dir/main.cpp.o  -o mini 
