@@ -265,14 +265,13 @@ FALSE	{ yylval->build<bool>(false); return token::BOOL; }
 "&&"		{ return token::ANDOP; }
 "||"            { return token::OR; }
 
-"="	{ yylval->build<int>(4); return token::COMPARISON; }
-"<=>"	{ yylval->build<int>(12); return token::COMPARISON; }
-">="	{ yylval->build<int>(6); return token::COMPARISON; }
+"="	{ yylval->build<int>(0); return token::COMPARISON; }
+">="	{ yylval->build<int>(1); return token::COMPARISON; }
 ">"	{ yylval->build<int>(2); return token::COMPARISON; }
-"<="	{ yylval->build<int>(5); return token::COMPARISON; }
-"<"	{ yylval->build<int>(1); return token::COMPARISON; }
+"<="	{ yylval->build<int>(3); return token::COMPARISON; }
+"<"	{ yylval->build<int>(4); return token::COMPARISON; }
 "!="	|
-"<>"	{ yylval->build<int>(3); return token::COMPARISON; }
+"<>"	{ yylval->build<int>(5); return token::COMPARISON; }
 
 [A-Za-z][A-Za-z0-9_]*	{ yylval->build<std::string>(yytext);
                           return token::NAME; }

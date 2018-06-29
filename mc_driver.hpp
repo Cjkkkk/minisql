@@ -68,7 +68,8 @@ public:
     }
     void pushValue(std::string v){
         condStack.tempString = v;
-        condStack.stackTopType = 120000;
+        condStack.stackTopType = 120000 + v.size() - 2;
+        std::cout<<"size is "<< condStack.stackTopType<<std::endl;
     }
     void pushValue(int v){
         condStack.tempInt = v;
@@ -80,8 +81,9 @@ public:
     }
 
     void oppop(int op){
-        std::cout << "pop op"<<std::endl;
-        std::cout<<condStack.top<<std::endl;
+//        std::cout << "pop op"<<std::endl;
+//        std::cout<<condStack.top<<std::endl;
+        std::cout<<"type : "<< op << std::endl;
         // for(int i = 0 ; i < condStack.top;i++){
         //     std::cout<<"in stack: "<<condStack.colunm[i]<<std::endl;
         // }
@@ -94,24 +96,20 @@ public:
         struct condition cl;
         cl.colunmName = c;
         cl.op = op;
+        cl.type = condStack.stackTopType;
+        cl.key.type = condStack.stackTopType;
         if(condStack.stackTopType == 50000){
             //int
-            cl.type = 50000;
             cl.key.intV = condStack.tempInt;
-            cl.key.type = 50000;
             stmt->c_list->push_back(cl);
             std::cout<<cl.key.type<<" "<<cl.key.intV<<std::endl;
         }else if(condStack.stackTopType == 90000){
             //float
-            cl.type = 90000;
             cl.key.floatV = condStack.tempFloat;
-            cl.key.type = 90000;
             stmt->c_list->push_back(cl);
             std::cout<<cl.key.type<<" "<<cl.key.floatV<<std::endl;
         }else{
             //string
-            cl.type = 120000;
-            cl.key.type = 120000;
             cl.key.charV = condStack.tempString;
             stmt->c_list->push_back(cl);
             std::cout<<cl.key.type<<" "<<cl.key.charV<<std::endl;

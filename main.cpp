@@ -40,6 +40,7 @@ main( const int argc, const char **argv )
         if( std::strncmp( argv[ 1 ], "-execfile", 2 ) == 0 ){
             driver.parse( argv[ 2 ] );
         }
+       API::save();
    }
    else
    {

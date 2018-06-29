@@ -33,8 +33,6 @@ int RecordManager::ReturnKP(IndexInfo I, Addr p, value& v) {
 		return -1;						//�����ַ�������ļ�ĩβ���򷵻�״̬-1
 	int Found = RS.FindRecord(p, R);	//�ҳ���Ӧ��¼
 	//RS.Addp(p);						//��ַ����
-	if (Found == 0)
-		return 0;						//Found == 0˵���ü�¼�ѱ���ɾ�����򷵻�״̬0
 	//�������������͸�value�Ĳ�ͬ������ֵ
 	if (RS.TypeTable[I.indexID] == INT) {
 		v.type = 50000;					//50000����Ŀ�����INT���͵Ķ���
@@ -45,10 +43,10 @@ int RecordManager::ReturnKP(IndexInfo I, Addr p, value& v) {
 		v.floatV = R.Findf(I.indexID);
 	}
 	else if (RS.TypeTable[I.indexID] == STRING) {
-		v.type == 130000;				//120000+����Ŀ�����STRING���͵Ķ���
+		v.type = 130000;				//120000+����Ŀ�����STRING���͵Ķ���
 		v.charV = R.Finds(I.indexID);
 	}
-	return 1;							//�ɹ����ؼ�ֵ������״̬1
+	return Found;							//�ɹ����ؼ�ֵ������״̬1
 }
 
 set<Addr> RecordManager::FindSuchRecord(STMT S) {

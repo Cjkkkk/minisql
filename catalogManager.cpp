@@ -100,6 +100,7 @@ void catalog::LoadIM_RM(IndexManager& IM,RecordManager& RM){
             IndexInfo i;
             i.tableName = T->tableName;
             i.indexName = it->second;
+            i.type = T->type[it->first];
             IndexList.push_back(i);
             it++;
         }

@@ -11,6 +11,14 @@ Record::Record(void) {
 	this->self = { -1, -1 };
 }
 
+void Record::clear(){
+	this->RecordState = EMPTY;
+	this->self = {-1, -1};
+	this->KI.clear();
+	this->KF.clear();
+	this->KS.clear();
+}
+
 int Record::Findi(int c) {
 	int i;
 	for (i = 0; i < KI.size(); i++) {
@@ -196,6 +204,7 @@ int RecordSet::FindRecord(Addr p, Record& R) {
 	int i;
 	if (p.BlockNum > this->Top.BlockNum || (p.BlockNum == this->Top.BlockNum && p.FileOff > this->Top.FileOff))
 		return -1;					//��ַ���ܳ����ļ����һ�м�¼�ĵ�ַ
+	R.clear();
 	R.self = p;						//��¼�ṹ�а����Լ���λ�ã����㴫��
 	int BlockNum = blocks.Find(this->Record_FileName, p.BlockNum);
 	if (BlockNum == -1) {

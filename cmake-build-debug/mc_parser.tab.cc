@@ -238,19 +238,19 @@ namespace MC {
 
       case 14: // COMPARISON
       case 32: // INTNUM
-      case 256: // column_list
-      case 257: // select_expr_list
-      case 259: // table_references
-      case 263: // delete_opts
-      case 264: // delete_list
-      case 267: // insert_opts
-      case 270: // insert_vals_list
-      case 276: // create_col_list
-      case 279: // column_atts
-      case 280: // opt_length
-      case 281: // opt_binary
-      case 282: // opt_uz
-      case 284: // data_type
+      case 258: // column_list
+      case 259: // select_expr_list
+      case 261: // table_references
+      case 265: // delete_opts
+      case 266: // delete_list
+      case 269: // insert_opts
+      case 272: // insert_vals_list
+      case 278: // create_col_list
+      case 281: // column_atts
+      case 282: // opt_length
+      case 283: // opt_binary
+      case 284: // opt_uz
+      case 286: // data_type
         value.copy< int > (other.value);
         break;
 
@@ -289,19 +289,19 @@ namespace MC {
 
       case 14: // COMPARISON
       case 32: // INTNUM
-      case 256: // column_list
-      case 257: // select_expr_list
-      case 259: // table_references
-      case 263: // delete_opts
-      case 264: // delete_list
-      case 267: // insert_opts
-      case 270: // insert_vals_list
-      case 276: // create_col_list
-      case 279: // column_atts
-      case 280: // opt_length
-      case 281: // opt_binary
-      case 282: // opt_uz
-      case 284: // data_type
+      case 258: // column_list
+      case 259: // select_expr_list
+      case 261: // table_references
+      case 265: // delete_opts
+      case 266: // delete_list
+      case 269: // insert_opts
+      case 272: // insert_vals_list
+      case 278: // create_col_list
+      case 281: // column_atts
+      case 282: // opt_length
+      case 283: // opt_binary
+      case 284: // opt_uz
+      case 286: // data_type
         value.copy< int > (v);
         break;
 
@@ -392,19 +392,19 @@ namespace MC {
 
       case 14: // COMPARISON
       case 32: // INTNUM
-      case 256: // column_list
-      case 257: // select_expr_list
-      case 259: // table_references
-      case 263: // delete_opts
-      case 264: // delete_list
-      case 267: // insert_opts
-      case 270: // insert_vals_list
-      case 276: // create_col_list
-      case 279: // column_atts
-      case 280: // opt_length
-      case 281: // opt_binary
-      case 282: // opt_uz
-      case 284: // data_type
+      case 258: // column_list
+      case 259: // select_expr_list
+      case 261: // table_references
+      case 265: // delete_opts
+      case 266: // delete_list
+      case 269: // insert_opts
+      case 272: // insert_vals_list
+      case 278: // create_col_list
+      case 281: // column_atts
+      case 282: // opt_length
+      case 283: // opt_binary
+      case 284: // opt_uz
+      case 286: // data_type
         value.template destroy< int > ();
         break;
 
@@ -449,19 +449,19 @@ namespace MC {
 
       case 14: // COMPARISON
       case 32: // INTNUM
-      case 256: // column_list
-      case 257: // select_expr_list
-      case 259: // table_references
-      case 263: // delete_opts
-      case 264: // delete_list
-      case 267: // insert_opts
-      case 270: // insert_vals_list
-      case 276: // create_col_list
-      case 279: // column_atts
-      case 280: // opt_length
-      case 281: // opt_binary
-      case 282: // opt_uz
-      case 284: // data_type
+      case 258: // column_list
+      case 259: // select_expr_list
+      case 261: // table_references
+      case 265: // delete_opts
+      case 266: // delete_list
+      case 269: // insert_opts
+      case 272: // insert_vals_list
+      case 278: // create_col_list
+      case 281: // column_atts
+      case 282: // opt_length
+      case 283: // opt_binary
+      case 284: // opt_uz
+      case 286: // data_type
         value.move< int > (s.value);
         break;
 
@@ -1928,6 +1928,18 @@ namespace MC {
     return symbol_type (token::FCOUNT, l);
   }
 
+  MC_Parser::symbol_type
+  MC_Parser::make_show (const location_type& l)
+  {
+    return symbol_type (token::show, l);
+  }
+
+  MC_Parser::symbol_type
+  MC_Parser::make_desc (const location_type& l)
+  {
+    return symbol_type (token::desc, l);
+  }
+
 
 
   // by_state.
@@ -1992,19 +2004,19 @@ namespace MC {
 
       case 14: // COMPARISON
       case 32: // INTNUM
-      case 256: // column_list
-      case 257: // select_expr_list
-      case 259: // table_references
-      case 263: // delete_opts
-      case 264: // delete_list
-      case 267: // insert_opts
-      case 270: // insert_vals_list
-      case 276: // create_col_list
-      case 279: // column_atts
-      case 280: // opt_length
-      case 281: // opt_binary
-      case 282: // opt_uz
-      case 284: // data_type
+      case 258: // column_list
+      case 259: // select_expr_list
+      case 261: // table_references
+      case 265: // delete_opts
+      case 266: // delete_list
+      case 269: // insert_opts
+      case 272: // insert_vals_list
+      case 278: // create_col_list
+      case 281: // column_atts
+      case 282: // opt_length
+      case 283: // opt_binary
+      case 284: // opt_uz
+      case 286: // data_type
         value.move< int > (that.value);
         break;
 
@@ -2041,19 +2053,19 @@ namespace MC {
 
       case 14: // COMPARISON
       case 32: // INTNUM
-      case 256: // column_list
-      case 257: // select_expr_list
-      case 259: // table_references
-      case 263: // delete_opts
-      case 264: // delete_list
-      case 267: // insert_opts
-      case 270: // insert_vals_list
-      case 276: // create_col_list
-      case 279: // column_atts
-      case 280: // opt_length
-      case 281: // opt_binary
-      case 282: // opt_uz
-      case 284: // data_type
+      case 258: // column_list
+      case 259: // select_expr_list
+      case 261: // table_references
+      case 265: // delete_opts
+      case 266: // delete_list
+      case 269: // insert_opts
+      case 272: // insert_vals_list
+      case 278: // create_col_list
+      case 281: // column_atts
+      case 282: // opt_length
+      case 283: // opt_binary
+      case 284: // opt_uz
+      case 286: // data_type
         value.copy< int > (that.value);
         break;
 
@@ -2302,19 +2314,19 @@ namespace MC {
 
       case 14: // COMPARISON
       case 32: // INTNUM
-      case 256: // column_list
-      case 257: // select_expr_list
-      case 259: // table_references
-      case 263: // delete_opts
-      case 264: // delete_list
-      case 267: // insert_opts
-      case 270: // insert_vals_list
-      case 276: // create_col_list
-      case 279: // column_atts
-      case 280: // opt_length
-      case 281: // opt_binary
-      case 282: // opt_uz
-      case 284: // data_type
+      case 258: // column_list
+      case 259: // select_expr_list
+      case 261: // table_references
+      case 265: // delete_opts
+      case 266: // delete_list
+      case 269: // insert_opts
+      case 272: // insert_vals_list
+      case 278: // create_col_list
+      case 281: // column_atts
+      case 282: // opt_length
+      case 283: // opt_binary
+      case 284: // opt_uz
+      case 286: // data_type
         yylhs.value.build< int > ();
         break;
 
@@ -2344,576 +2356,582 @@ namespace MC {
           switch (yyn)
             {
   case 2:
-#line 311 "mc_parser.yy" // lalr1.cc:859
-    { std::cout<<"minisql > ";}
-#line 2350 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
-    break;
-
-  case 3:
 #line 312 "mc_parser.yy" // lalr1.cc:859
-    {std::cout<<"minisql > ";}
-#line 2356 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
-    break;
-
-  case 4:
-#line 314 "mc_parser.yy" // lalr1.cc:859
-    { API::select_value(driver.stmt);driver.Clear(4);}
+    { std::cout<<"minisql > ";}
 #line 2362 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 5:
-#line 315 "mc_parser.yy" // lalr1.cc:859
-    {std::cout<<"quit"<<std::endl;API::save();return 0;}
+  case 3:
+#line 313 "mc_parser.yy" // lalr1.cc:859
+    {std::cout<<"minisql > ";}
 #line 2368 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 6:
-#line 324 "mc_parser.yy" // lalr1.cc:859
-    { std::cout<<"SELECT "<< yystack_[3].value.as< int > () <<" "<< yystack_[1].value.as< int > () << std::endl;driver.addcolunm(yystack_[3].value.as< int > ()); }
+  case 4:
+#line 315 "mc_parser.yy" // lalr1.cc:859
+    { API::select_value(driver.stmt);driver.Clear(4);}
 #line 2374 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 8:
-#line 328 "mc_parser.yy" // lalr1.cc:859
-    { }
+  case 5:
+#line 316 "mc_parser.yy" // lalr1.cc:859
+    {std::cout<<"quit"<<std::endl;API::save();return 0;}
 #line 2380 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 9:
-#line 330 "mc_parser.yy" // lalr1.cc:859
-    { std::cout<<yystack_[0].value.as< std::string > ()<<std::endl; }
+  case 6:
+#line 317 "mc_parser.yy" // lalr1.cc:859
+    {API::showTable();}
 #line 2386 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 10:
-#line 331 "mc_parser.yy" // lalr1.cc:859
-    {  yylhs.value.as< int > () = yystack_[2].value.as< int > () + 1; }
+  case 7:
+#line 318 "mc_parser.yy" // lalr1.cc:859
+    {API::descTable(yystack_[0].value.as< std::string > ());}
 #line 2392 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 11:
-#line 334 "mc_parser.yy" // lalr1.cc:859
-    { yylhs.value.as< int > () = 1; }
+  case 8:
+#line 329 "mc_parser.yy" // lalr1.cc:859
+    { std::cout<<"SELECT "<< yystack_[3].value.as< int > () <<" "<< yystack_[1].value.as< int > () << std::endl;driver.addcolunm(yystack_[3].value.as< int > ()); }
 #line 2398 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 12:
-#line 335 "mc_parser.yy" // lalr1.cc:859
-    {yylhs.value.as< int > () = yystack_[2].value.as< int > () + 1; }
+  case 10:
+#line 333 "mc_parser.yy" // lalr1.cc:859
+    { }
 #line 2404 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 13:
-#line 336 "mc_parser.yy" // lalr1.cc:859
-    {  yylhs.value.as< int > () = -1;driver.selectAll(); }
+  case 11:
+#line 335 "mc_parser.yy" // lalr1.cc:859
+    { std::cout<<yystack_[0].value.as< std::string > ()<<std::endl; }
 #line 2410 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 15:
-#line 342 "mc_parser.yy" // lalr1.cc:859
-    { yylhs.value.as< int > () = 1; }
+  case 12:
+#line 336 "mc_parser.yy" // lalr1.cc:859
+    {  yylhs.value.as< int > () = yystack_[2].value.as< int > () + 1; }
 #line 2416 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 16:
-#line 343 "mc_parser.yy" // lalr1.cc:859
-    { yylhs.value.as< int > () = yystack_[2].value.as< int > () + 1; }
+  case 13:
+#line 339 "mc_parser.yy" // lalr1.cc:859
+    { yylhs.value.as< int > () = 1; }
 #line 2422 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 18:
-#line 350 "mc_parser.yy" // lalr1.cc:859
-    {driver.addTableName(yystack_[0].value.as< std::string > ());}
+  case 14:
+#line 340 "mc_parser.yy" // lalr1.cc:859
+    {yylhs.value.as< int > () = yystack_[2].value.as< int > () + 1; }
 #line 2428 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 19:
-#line 355 "mc_parser.yy" // lalr1.cc:859
-    {  API::delete_Value(driver.stmt);driver.Clear(5);}
+  case 15:
+#line 341 "mc_parser.yy" // lalr1.cc:859
+    {  yylhs.value.as< int > () = -1;driver.selectAll(); }
 #line 2434 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 20:
-#line 360 "mc_parser.yy" // lalr1.cc:859
-    { driver.addTableName(yystack_[1].value.as< std::string > ()); }
+  case 17:
+#line 347 "mc_parser.yy" // lalr1.cc:859
+    { yylhs.value.as< int > () = 1; }
 #line 2440 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 21:
-#line 363 "mc_parser.yy" // lalr1.cc:859
-    { yylhs.value.as< int > () = 0; }
+  case 18:
+#line 348 "mc_parser.yy" // lalr1.cc:859
+    { yylhs.value.as< int > () = yystack_[2].value.as< int > () + 1; }
 #line 2446 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 22:
-#line 369 "mc_parser.yy" // lalr1.cc:859
-    {  }
+  case 20:
+#line 355 "mc_parser.yy" // lalr1.cc:859
+    {driver.addTableName(yystack_[0].value.as< std::string > ());}
 #line 2452 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 23:
-#line 371 "mc_parser.yy" // lalr1.cc:859
-    { yylhs.value.as< int > () = 1; }
+  case 21:
+#line 360 "mc_parser.yy" // lalr1.cc:859
+    {  API::delete_Value(driver.stmt);driver.Clear(5);}
 #line 2458 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 24:
-#line 373 "mc_parser.yy" // lalr1.cc:859
-    {  yylhs.value.as< int > () = yystack_[3].value.as< int > () + 1; }
+  case 22:
+#line 365 "mc_parser.yy" // lalr1.cc:859
+    { driver.addTableName(yystack_[1].value.as< std::string > ()); }
 #line 2464 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 27:
-#line 381 "mc_parser.yy" // lalr1.cc:859
-    {  }
+  case 23:
+#line 368 "mc_parser.yy" // lalr1.cc:859
+    { yylhs.value.as< int > () = 0; }
 #line 2470 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 28:
-#line 387 "mc_parser.yy" // lalr1.cc:859
-    { API::insert_value(driver.stmt);driver.Clear(3); }
+  case 24:
+#line 374 "mc_parser.yy" // lalr1.cc:859
+    {  }
 #line 2476 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 29:
-#line 391 "mc_parser.yy" // lalr1.cc:859
-    { driver.addTableName(yystack_[3].value.as< std::string > ());}
+  case 25:
+#line 376 "mc_parser.yy" // lalr1.cc:859
+    { yylhs.value.as< int > () = 1; }
 #line 2482 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 30:
-#line 394 "mc_parser.yy" // lalr1.cc:859
-    { yylhs.value.as< int > () = 0; }
+  case 26:
+#line 378 "mc_parser.yy" // lalr1.cc:859
+    {  yylhs.value.as< int > () = yystack_[3].value.as< int > () + 1; }
 #line 2488 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 34:
-#line 401 "mc_parser.yy" // lalr1.cc:859
+  case 29:
+#line 386 "mc_parser.yy" // lalr1.cc:859
     {  }
 #line 2494 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 35:
-#line 404 "mc_parser.yy" // lalr1.cc:859
-    {  }
+  case 30:
+#line 392 "mc_parser.yy" // lalr1.cc:859
+    { API::insert_value(driver.stmt);driver.Clear(3); }
 #line 2500 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 36:
-#line 405 "mc_parser.yy" // lalr1.cc:859
-    {  }
+  case 31:
+#line 396 "mc_parser.yy" // lalr1.cc:859
+    { driver.addTableName(yystack_[3].value.as< std::string > ());}
 #line 2506 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 37:
-#line 408 "mc_parser.yy" // lalr1.cc:859
-    { std::cout<< yystack_[0].value.as< int > () << std::endl;driver.addValue(yystack_[0].value.as< int > ());}
+  case 32:
+#line 399 "mc_parser.yy" // lalr1.cc:859
+    { yylhs.value.as< int > () = 0; }
 #line 2512 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 38:
-#line 409 "mc_parser.yy" // lalr1.cc:859
-    { std::cout<< yystack_[0].value.as< float > () << std::endl;driver.addValue(yystack_[0].value.as< float > ());}
+  case 36:
+#line 406 "mc_parser.yy" // lalr1.cc:859
+    {  }
 #line 2518 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 39:
-#line 410 "mc_parser.yy" // lalr1.cc:859
-    { std::cout<< yystack_[0].value.as< std::string > () << std::endl;driver.addValue(yystack_[0].value.as< std::string > ());}
+  case 37:
+#line 409 "mc_parser.yy" // lalr1.cc:859
+    {  }
 #line 2524 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 40:
-#line 411 "mc_parser.yy" // lalr1.cc:859
-    { }
+  case 38:
+#line 410 "mc_parser.yy" // lalr1.cc:859
+    {  }
 #line 2530 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
+    break;
+
+  case 39:
+#line 413 "mc_parser.yy" // lalr1.cc:859
+    { std::cout<< yystack_[0].value.as< int > () << std::endl;driver.addValue(yystack_[0].value.as< int > ());}
+#line 2536 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
+    break;
+
+  case 40:
+#line 414 "mc_parser.yy" // lalr1.cc:859
+    { std::cout<< yystack_[0].value.as< float > () << std::endl;driver.addValue(yystack_[0].value.as< float > ());}
+#line 2542 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 41:
 #line 415 "mc_parser.yy" // lalr1.cc:859
+    { std::cout<< yystack_[0].value.as< std::string > () << std::endl;driver.addValue(yystack_[0].value.as< std::string > ());}
+#line 2548 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
+    break;
+
+  case 42:
+#line 416 "mc_parser.yy" // lalr1.cc:859
+    { }
+#line 2554 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
+    break;
+
+  case 43:
+#line 420 "mc_parser.yy" // lalr1.cc:859
     {
     
     API::createIndex(driver.indexInfo);
     driver.Clear(2);
     }
-#line 2540 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
+#line 2564 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 42:
-#line 423 "mc_parser.yy" // lalr1.cc:859
+  case 44:
+#line 428 "mc_parser.yy" // lalr1.cc:859
     {driver.addIndexParam(yystack_[5].value.as< std::string > (),yystack_[3].value.as< std::string > (),yystack_[1].value.as< std::string > ());}
-#line 2546 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
+#line 2570 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 43:
-#line 427 "mc_parser.yy" // lalr1.cc:859
+  case 45:
+#line 432 "mc_parser.yy" // lalr1.cc:859
     {
    
     API::dropIndex(driver.indexInfo);
     driver.Clear(2);}
-#line 2555 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
+#line 2579 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 44:
-#line 433 "mc_parser.yy" // lalr1.cc:859
+  case 46:
+#line 438 "mc_parser.yy" // lalr1.cc:859
     {
     driver.addIndexParam(yystack_[0].value.as< std::string > (),"","");
     }
-#line 2563 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
+#line 2587 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 45:
-#line 439 "mc_parser.yy" // lalr1.cc:859
+  case 47:
+#line 444 "mc_parser.yy" // lalr1.cc:859
     {
     API::dropTable(driver.tableInfo);
     driver.Clear(0);
 }
-#line 2572 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
+#line 2596 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 46:
-#line 444 "mc_parser.yy" // lalr1.cc:859
-    {driver.addTableInfoTableName(yystack_[0].value.as< std::string > ());}
-#line 2578 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
-    break;
-
-  case 47:
+  case 48:
 #line 449 "mc_parser.yy" // lalr1.cc:859
+    {driver.addTableInfoTableName(yystack_[0].value.as< std::string > ());}
+#line 2602 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
+    break;
+
+  case 49:
+#line 454 "mc_parser.yy" // lalr1.cc:859
     { 
     //driver.emit("STMT");
     API::createTable(driver.tableInfo);
     driver.Clear(0);}
-#line 2587 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
-    break;
-
-  case 48:
-#line 456 "mc_parser.yy" // lalr1.cc:859
-    { 
-       //driver.emit("CREATETABLE");
-       driver.addTableInfoTableName(yystack_[3].value.as< std::string > ());}
-#line 2595 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
-    break;
-
-  case 49:
-#line 461 "mc_parser.yy" // lalr1.cc:859
-    { yylhs.value.as< int > () = 1; }
-#line 2601 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
+#line 2611 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 50:
-#line 462 "mc_parser.yy" // lalr1.cc:859
-    { yylhs.value.as< int > () = yystack_[2].value.as< int > () + 1; }
-#line 2607 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
+#line 461 "mc_parser.yy" // lalr1.cc:859
+    { 
+       //driver.emit("CREATETABLE");
+       driver.addTableInfoTableName(yystack_[3].value.as< std::string > ());}
+#line 2619 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 51:
-#line 465 "mc_parser.yy" // lalr1.cc:859
-    { 
-                    //driver.emit("STARTCOL"); 
-                    }
-#line 2615 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
+#line 466 "mc_parser.yy" // lalr1.cc:859
+    { yylhs.value.as< int > () = 1; }
+#line 2625 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 52:
-#line 468 "mc_parser.yy" // lalr1.cc:859
+#line 467 "mc_parser.yy" // lalr1.cc:859
+    { yylhs.value.as< int > () = yystack_[2].value.as< int > () + 1; }
+#line 2631 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
+    break;
+
+  case 53:
+#line 470 "mc_parser.yy" // lalr1.cc:859
+    { 
+                    //driver.emit("STARTCOL"); 
+                    }
+#line 2639 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
+    break;
+
+  case 54:
+#line 473 "mc_parser.yy" // lalr1.cc:859
     { //driver.emit("COLUMNDEF");
                    driver.addColunm(yystack_[2].value.as< std::string > (),yystack_[1].value.as< int > (),yystack_[0].value.as< int > ());
                    std::cout<<"i am datatype"<<yystack_[1].value.as< int > ()<<std::endl;
                    //std::cout << $2 <<" "<< $3 <<" " << $4 << std::endl;
                    }
-#line 2625 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
-    break;
-
-  case 53:
-#line 474 "mc_parser.yy" // lalr1.cc:859
-    { driver.addConstraint(yystack_[1].value.as< std::string > (),3);}
-#line 2631 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
-    break;
-
-  case 54:
-#line 475 "mc_parser.yy" // lalr1.cc:859
-    { }
-#line 2637 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
-    break;
-
-  case 55:
-#line 476 "mc_parser.yy" // lalr1.cc:859
-    { driver.addConstraint(yystack_[1].value.as< std::string > (),4);}
-#line 2643 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
-    break;
-
-  case 56:
-#line 479 "mc_parser.yy" // lalr1.cc:859
-    { yylhs.value.as< int > () = 0; }
 #line 2649 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 57:
-#line 480 "mc_parser.yy" // lalr1.cc:859
-    {  yylhs.value.as< int > () = yystack_[2].value.as< int > () + 1; }
+  case 55:
+#line 479 "mc_parser.yy" // lalr1.cc:859
+    { driver.addConstraint(yystack_[1].value.as< std::string > (),3);}
 #line 2655 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 59:
-#line 482 "mc_parser.yy" // lalr1.cc:859
-    {  yylhs.value.as< int > () = yystack_[4].value.as< int > () + 2; }
+  case 56:
+#line 480 "mc_parser.yy" // lalr1.cc:859
+    { }
 #line 2661 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 60:
-#line 483 "mc_parser.yy" // lalr1.cc:859
-    { yylhs.value.as< int > () = yystack_[1].value.as< int > () + 2; }
+  case 57:
+#line 481 "mc_parser.yy" // lalr1.cc:859
+    { driver.addConstraint(yystack_[1].value.as< std::string > (),4);}
 #line 2667 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 61:
+  case 58:
 #line 484 "mc_parser.yy" // lalr1.cc:859
-    {  yylhs.value.as< int > () = yystack_[2].value.as< int > () + 3; }
+    { yylhs.value.as< int > () = 0; }
 #line 2673 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 62:
-#line 487 "mc_parser.yy" // lalr1.cc:859
-    { yylhs.value.as< int > () = 0; }
+  case 59:
+#line 485 "mc_parser.yy" // lalr1.cc:859
+    {  yylhs.value.as< int > () = yystack_[2].value.as< int > () + 1; }
 #line 2679 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 63:
-#line 488 "mc_parser.yy" // lalr1.cc:859
-    { yylhs.value.as< int > () = yystack_[1].value.as< int > (); }
+  case 61:
+#line 487 "mc_parser.yy" // lalr1.cc:859
+    { yylhs.value.as< int > () = yystack_[1].value.as< int > () + 2; }
 #line 2685 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 64:
-#line 489 "mc_parser.yy" // lalr1.cc:859
-    { yylhs.value.as< int > () = yystack_[3].value.as< int > () + 1000*yystack_[1].value.as< int > (); }
+  case 62:
+#line 488 "mc_parser.yy" // lalr1.cc:859
+    {  yylhs.value.as< int > () = yystack_[2].value.as< int > () + 3; }
 #line 2691 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 65:
-#line 492 "mc_parser.yy" // lalr1.cc:859
+  case 63:
+#line 491 "mc_parser.yy" // lalr1.cc:859
     { yylhs.value.as< int > () = 0; }
 #line 2697 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 66:
-#line 493 "mc_parser.yy" // lalr1.cc:859
-    { yylhs.value.as< int > () = 4000; }
+  case 64:
+#line 492 "mc_parser.yy" // lalr1.cc:859
+    { yylhs.value.as< int > () = yystack_[1].value.as< int > (); }
 #line 2703 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 67:
-#line 496 "mc_parser.yy" // lalr1.cc:859
-    { yylhs.value.as< int > () = 0; }
+  case 65:
+#line 493 "mc_parser.yy" // lalr1.cc:859
+    { yylhs.value.as< int > () = yystack_[3].value.as< int > () + 1000*yystack_[1].value.as< int > (); }
 #line 2709 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 68:
-#line 497 "mc_parser.yy" // lalr1.cc:859
-    { yylhs.value.as< int > () = yystack_[1].value.as< int > () | 1000; }
+  case 66:
+#line 496 "mc_parser.yy" // lalr1.cc:859
+    { yylhs.value.as< int > () = 0; }
 #line 2715 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 70:
-#line 501 "mc_parser.yy" // lalr1.cc:859
-    { driver.emit("COLCHARSET"); }
+  case 67:
+#line 497 "mc_parser.yy" // lalr1.cc:859
+    { yylhs.value.as< int > () = 4000; }
 #line 2721 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 71:
-#line 502 "mc_parser.yy" // lalr1.cc:859
-    { driver.emit("COLCOLLATE");  }
+  case 68:
+#line 500 "mc_parser.yy" // lalr1.cc:859
+    { yylhs.value.as< int > () = 0; }
 #line 2727 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
+    break;
+
+  case 69:
+#line 501 "mc_parser.yy" // lalr1.cc:859
+    { yylhs.value.as< int > () = yystack_[1].value.as< int > () | 1000; }
+#line 2733 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
+    break;
+
+  case 71:
+#line 505 "mc_parser.yy" // lalr1.cc:859
+    { driver.emit("COLCHARSET"); }
+#line 2739 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 72:
 #line 506 "mc_parser.yy" // lalr1.cc:859
-    { yylhs.value.as< int > () = 40000 + yystack_[1].value.as< int > () + yystack_[0].value.as< int > (); }
-#line 2733 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
-    break;
-
-  case 73:
-#line 507 "mc_parser.yy" // lalr1.cc:859
-    { yylhs.value.as< int > () = 50000 + yystack_[1].value.as< int > () + yystack_[0].value.as< int > (); }
-#line 2739 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
-    break;
-
-  case 74:
-#line 508 "mc_parser.yy" // lalr1.cc:859
-    { yylhs.value.as< int > () = 80000 + yystack_[1].value.as< int > () + yystack_[0].value.as< int > (); }
+    { driver.emit("COLCOLLATE");  }
 #line 2745 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 75:
-#line 509 "mc_parser.yy" // lalr1.cc:859
-    { yylhs.value.as< int > () = 90000 + yystack_[1].value.as< int > () + yystack_[0].value.as< int > (); }
+  case 73:
+#line 510 "mc_parser.yy" // lalr1.cc:859
+    { yylhs.value.as< int > () = 40000 + yystack_[1].value.as< int > () + yystack_[0].value.as< int > (); }
 #line 2751 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 76:
-#line 510 "mc_parser.yy" // lalr1.cc:859
-    { yylhs.value.as< int > () = 120000 + yystack_[1].value.as< int > (); }
+  case 74:
+#line 511 "mc_parser.yy" // lalr1.cc:859
+    { yylhs.value.as< int > () = 50000 + yystack_[1].value.as< int > () + yystack_[0].value.as< int > (); }
 #line 2757 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 77:
-#line 511 "mc_parser.yy" // lalr1.cc:859
-    { yylhs.value.as< int > () = 130000 + yystack_[2].value.as< int > (); }
+  case 75:
+#line 512 "mc_parser.yy" // lalr1.cc:859
+    { yylhs.value.as< int > () = 80000 + yystack_[1].value.as< int > () + yystack_[0].value.as< int > (); }
 #line 2763 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 78:
-#line 512 "mc_parser.yy" // lalr1.cc:859
-    { yylhs.value.as< int > () = 171000 + yystack_[1].value.as< int > (); }
+  case 76:
+#line 513 "mc_parser.yy" // lalr1.cc:859
+    { yylhs.value.as< int > () = 90000 + yystack_[1].value.as< int > () + yystack_[0].value.as< int > (); }
 #line 2769 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 79:
-#line 519 "mc_parser.yy" // lalr1.cc:859
-    { driver.pushCol(yystack_[0].value.as< std::string > ());}
+  case 77:
+#line 514 "mc_parser.yy" // lalr1.cc:859
+    { yylhs.value.as< int > () = 120000 + yystack_[1].value.as< int > (); }
 #line 2775 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 80:
-#line 520 "mc_parser.yy" // lalr1.cc:859
-    {  driver.pushValue(yystack_[0].value.as< std::string > ());}
+  case 78:
+#line 515 "mc_parser.yy" // lalr1.cc:859
+    { yylhs.value.as< int > () = 130000 + yystack_[2].value.as< int > (); }
 #line 2781 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 81:
-#line 521 "mc_parser.yy" // lalr1.cc:859
-    {  driver.pushValue(yystack_[0].value.as< int > ()); }
+  case 79:
+#line 516 "mc_parser.yy" // lalr1.cc:859
+    { yylhs.value.as< int > () = 171000 + yystack_[1].value.as< int > (); }
 #line 2787 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 82:
-#line 522 "mc_parser.yy" // lalr1.cc:859
-    {  driver.pushValue(yystack_[0].value.as< float > ());}
+  case 80:
+#line 523 "mc_parser.yy" // lalr1.cc:859
+    { driver.pushCol(yystack_[0].value.as< std::string > ());}
 #line 2793 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 83:
-#line 523 "mc_parser.yy" // lalr1.cc:859
-    {  }
+  case 81:
+#line 524 "mc_parser.yy" // lalr1.cc:859
+    {  driver.pushValue(yystack_[0].value.as< std::string > ());}
 #line 2799 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 84:
-#line 526 "mc_parser.yy" // lalr1.cc:859
-    {  }
+  case 82:
+#line 525 "mc_parser.yy" // lalr1.cc:859
+    {  driver.pushValue(yystack_[0].value.as< int > ()); }
 #line 2805 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 85:
-#line 527 "mc_parser.yy" // lalr1.cc:859
-    {  }
+  case 83:
+#line 526 "mc_parser.yy" // lalr1.cc:859
+    {  driver.pushValue(yystack_[0].value.as< float > ());}
 #line 2811 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 86:
-#line 528 "mc_parser.yy" // lalr1.cc:859
+  case 84:
+#line 527 "mc_parser.yy" // lalr1.cc:859
     {  }
 #line 2817 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 87:
-#line 529 "mc_parser.yy" // lalr1.cc:859
+  case 85:
+#line 530 "mc_parser.yy" // lalr1.cc:859
     {  }
 #line 2823 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 88:
-#line 530 "mc_parser.yy" // lalr1.cc:859
+  case 86:
+#line 531 "mc_parser.yy" // lalr1.cc:859
     {  }
 #line 2829 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 89:
-#line 531 "mc_parser.yy" // lalr1.cc:859
+  case 87:
+#line 532 "mc_parser.yy" // lalr1.cc:859
     {  }
 #line 2835 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 90:
-#line 532 "mc_parser.yy" // lalr1.cc:859
+  case 88:
+#line 533 "mc_parser.yy" // lalr1.cc:859
     {  }
 #line 2841 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 91:
-#line 533 "mc_parser.yy" // lalr1.cc:859
+  case 89:
+#line 534 "mc_parser.yy" // lalr1.cc:859
     {  }
 #line 2847 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 92:
-#line 534 "mc_parser.yy" // lalr1.cc:859
-    { }
+  case 90:
+#line 535 "mc_parser.yy" // lalr1.cc:859
+    {  }
 #line 2853 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 93:
-#line 535 "mc_parser.yy" // lalr1.cc:859
+  case 91:
+#line 536 "mc_parser.yy" // lalr1.cc:859
     {  }
 #line 2859 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 94:
-#line 536 "mc_parser.yy" // lalr1.cc:859
-    {  driver.oppop(yystack_[1].value.as< int > ());}
+  case 92:
+#line 537 "mc_parser.yy" // lalr1.cc:859
+    {  }
 #line 2865 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 95:
-#line 537 "mc_parser.yy" // lalr1.cc:859
-    {}
+  case 93:
+#line 538 "mc_parser.yy" // lalr1.cc:859
+    { }
 #line 2871 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 96:
-#line 538 "mc_parser.yy" // lalr1.cc:859
+  case 94:
+#line 539 "mc_parser.yy" // lalr1.cc:859
     {  }
 #line 2877 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 97:
-#line 539 "mc_parser.yy" // lalr1.cc:859
-    {  }
+  case 95:
+#line 540 "mc_parser.yy" // lalr1.cc:859
+    {  driver.oppop(yystack_[1].value.as< int > ());}
 #line 2883 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 98:
-#line 540 "mc_parser.yy" // lalr1.cc:859
-    {  }
+  case 96:
+#line 541 "mc_parser.yy" // lalr1.cc:859
+    {}
 #line 2889 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 99:
-#line 543 "mc_parser.yy" // lalr1.cc:859
-    { driver.emit("ISNULL"); }
+  case 97:
+#line 542 "mc_parser.yy" // lalr1.cc:859
+    {  }
 #line 2895 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 100:
-#line 544 "mc_parser.yy" // lalr1.cc:859
-    { driver.emit("ISNULL"); driver.emit("NOT"); }
+  case 98:
+#line 543 "mc_parser.yy" // lalr1.cc:859
+    {  }
 #line 2901 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 101:
-#line 545 "mc_parser.yy" // lalr1.cc:859
-    { driver.emit("ISBOOL"); }
+  case 99:
+#line 544 "mc_parser.yy" // lalr1.cc:859
+    {  }
 #line 2907 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 102:
-#line 546 "mc_parser.yy" // lalr1.cc:859
-    { driver.emit("ISBOOL"); driver.emit("NOT"); }
+  case 100:
+#line 547 "mc_parser.yy" // lalr1.cc:859
+    { driver.emit("ISNULL"); }
 #line 2913 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
+  case 101:
+#line 548 "mc_parser.yy" // lalr1.cc:859
+    { driver.emit("ISNULL"); driver.emit("NOT"); }
+#line 2919 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
+    break;
 
-#line 2917 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
+  case 102:
+#line 549 "mc_parser.yy" // lalr1.cc:859
+    { driver.emit("ISBOOL"); }
+#line 2925 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
+    break;
+
+  case 103:
+#line 550 "mc_parser.yy" // lalr1.cc:859
+    { driver.emit("ISBOOL"); driver.emit("NOT"); }
+#line 2931 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
+    break;
+
+
+#line 2935 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
             default:
               break;
             }
@@ -3168,196 +3186,196 @@ namespace MC {
   }
 
 
-  const short int MC_Parser::yypact_ninf_ = -217;
+  const short int MC_Parser::yypact_ninf_ = -209;
 
-  const signed char MC_Parser::yytable_ninf_ = -8;
+  const signed char MC_Parser::yytable_ninf_ = -10;
 
   const short int
   MC_Parser::yypact_[] =
   {
-     -56,  -120,  -217,  -118,  -217,    75,  -217,     0,  -213,  -217,
-    -217,  -217,  -217,  -217,  -217,  -217,    17,    32,   -17,    58,
-      65,   -31,   106,   106,   106,  -217,  -217,  -217,  -217,  -217,
-    -217,   100,  -101,  -217,   108,  -217,  -142,  -217,   -47,  -134,
-    -117,   102,  -100,  -217,  -217,  -217,   105,   156,   156,  -217,
-     106,   113,   106,   106,   106,   106,    -6,   -10,   106,   106,
-     106,   106,   106,   106,  -217,   115,   -89,   135,  -217,  -204,
-    -212,   113,   126,   -92,   108,  -217,  -177,  -217,  -217,  -217,
-     147,   174,   189,   -22,  -217,  -217,   -27,   197,    55,    55,
-    -217,  -217,  -217,  -217,   -91,   -86,   -78,    42,  -216,  -217,
-     149,  -217,   106,  -217,   113,  -177,  -117,   153,   -46,   113,
-    -217,  -217,  -217,   -64,   157,   160,   153,   -51,   -89,  -217,
-     -52,   108,  -177,  -217,  -217,  -217,  -186,   -50,  -217,  -217,
-     -49,   -48,  -181,   170,  -217,   -45,   -45,   -45,   -45,   -45,
-     158,   -37,  -217,  -217,   190,  -217,     6,   -26,  -217,  -217,
-    -217,   -28,   191,  -217,  -217,  -217,  -217,  -217,  -217,  -217,
-     192,    -8,  -217,  -217,  -217,  -217,  -179,   -24,  -217,  -169,
-      86,     3,     3,     3,     3,    86,   -23,    72,  -217,    99,
-     -19,     6,  -217,     6,   199,  -217,    40,   202,  -217,  -217,
-    -217,  -217,   153,   -13,  -167,   -15,   205,  -217,    86,  -165,
-    -217,  -217,  -217,  -217
+     -56,  -119,  -209,  -118,  -209,    69,  -209,  -174,  -148,     0,
+    -205,  -209,  -209,  -209,  -209,  -209,  -209,  -209,    59,    96,
+     -12,    98,   100,     4,   104,   104,   104,  -209,  -209,  -209,
+    -209,  -209,  -209,   129,  -100,  -209,   149,  -209,   110,  -209,
+    -107,  -209,   -16,  -108,  -106,   115,   -97,  -209,  -209,  -209,
+     116,    57,    57,  -209,   104,   117,   104,   104,   104,   104,
+      -6,   -10,   104,   104,   104,   104,   104,   104,  -209,  -209,
+     121,  -104,   137,  -209,  -204,  -208,   117,   128,   -90,   149,
+    -209,  -202,  -209,  -209,  -209,   180,   197,   212,   -27,  -209,
+    -209,   -17,    88,    92,    92,  -209,  -209,  -209,  -209,   -89,
+     -87,   -86,    43,  -186,  -209,   144,  -209,   104,  -209,   117,
+    -202,  -106,   145,   -55,   117,  -209,  -209,  -209,   -75,   148,
+     150,   145,   -72,  -104,  -209,   -52,   149,  -202,  -209,  -209,
+    -209,  -167,   -69,  -209,  -209,   -65,   -60,  -166,   153,  -209,
+     -58,   -58,   -58,   -58,   -58,   157,   -45,  -209,  -209,   165,
+    -209,     6,   -53,  -209,  -209,  -209,   -44,   175,  -209,  -209,
+    -209,  -209,  -209,  -209,  -209,   177,    -8,  -209,  -209,  -209,
+    -209,  -156,   -41,  -209,  -155,   -25,   -11,   -11,   -11,   -11,
+     -25,   -31,    66,  -209,    93,  -209,     6,  -209,     6,   192,
+    -209,    33,   196,  -209,  -209,  -209,  -209,   -21,  -128,   -15,
+     204,  -209,   -25,  -209,  -209,  -209
   };
 
   const unsigned char
   MC_Parser::yydefact_[] =
   {
-       0,     0,    21,     0,    30,     0,     5,     0,     0,     4,
-      19,    28,    41,    43,    45,    47,     0,     0,     0,     0,
-       0,    32,     0,     0,     0,    13,    79,    80,    81,    83,
-      82,     0,     0,    11,    14,     1,     0,     2,     0,     0,
-      25,     0,     0,    44,    46,    31,     0,    96,    97,    90,
-       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
-       0,     0,     0,     0,     3,     0,    51,     0,    23,    25,
-       0,     0,     0,    33,    98,    18,     7,    15,    17,    12,
-      92,    93,    91,     0,   101,    99,     0,    94,    84,    85,
-      86,    87,    88,    89,     0,     0,     0,     0,     0,    49,
-       0,    26,     0,    20,     0,     7,    25,     0,     0,     0,
-       6,   102,   100,     0,     0,     0,     0,     0,    51,    48,
-       0,     8,     7,    22,    24,     9,     0,     0,    16,    95,
-       0,     0,     0,     0,    50,    62,    62,    62,    62,    62,
-      65,     0,    56,    27,     0,    34,     0,    29,    42,    55,
-      54,     0,     0,    69,    67,    67,    67,    67,    66,    69,
-       0,    52,    10,    39,    37,    38,     0,     0,    53,     0,
-      76,    74,    75,    72,    73,    78,     0,     0,    58,     0,
-      60,     0,    35,     0,     0,    63,     0,     0,    68,    69,
-      57,    61,     0,    40,     0,     0,     0,    71,    77,     0,
-      36,    64,    70,    59
+       0,     0,    23,     0,    32,     0,     5,     0,     0,     0,
+       0,     4,    21,    30,    43,    45,    47,    49,     0,     0,
+       0,     0,     0,    34,     0,     0,     0,    15,    80,    81,
+      82,    84,    83,     0,     0,    13,    16,     6,     0,     1,
+       0,     2,     0,     0,    27,     0,     0,    46,    48,    33,
+       0,    97,    98,    91,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,     0,     7,     3,
+       0,    53,     0,    25,    27,     0,     0,     0,    35,    99,
+      20,     9,    17,    19,    14,    93,    94,    92,     0,   102,
+     100,     0,    95,    85,    86,    87,    88,    89,    90,     0,
+       0,     0,     0,     0,    51,     0,    28,     0,    22,     0,
+       9,    27,     0,     0,     0,     8,   103,   101,     0,     0,
+       0,     0,     0,    53,    50,     0,    10,     9,    24,    26,
+      11,     0,     0,    18,    96,     0,     0,     0,     0,    52,
+      63,    63,    63,    63,    63,    66,     0,    58,    29,     0,
+      36,     0,    31,    44,    57,    56,     0,     0,    70,    68,
+      68,    68,    68,    67,    70,     0,    54,    12,    41,    39,
+      40,     0,     0,    55,     0,    77,    75,    76,    73,    74,
+      79,     0,     0,    60,     0,    61,     0,    37,     0,     0,
+      64,     0,     0,    69,    70,    59,    62,    42,     0,     0,
+       0,    72,    78,    38,    65,    71
   };
 
   const short int
   MC_Parser::yypgoto_[] =
   {
-    -217,  -217,   230,   152,   -62,   -90,  -217,   193,   -41,   132,
-    -217,  -217,  -217,   201,   137,  -217,  -217,  -217,  -217,  -217,
-     -32,  -217,  -217,  -217,  -217,  -217,   128,  -217,  -217,   -38,
-    -217,   -36,  -143,  -217,    -5
+    -209,  -209,   227,   147,   -68,   118,  -209,   186,   -47,   130,
+    -209,  -209,  -209,   198,   134,  -209,  -209,  -209,  -209,  -209,
+     -61,  -209,  -209,  -209,  -209,  -209,   125,  -209,  -209,   -24,
+    -209,   -92,  -134,  -209,    -9
   };
 
   const short int
   MC_Parser::yydefgoto_[] =
   {
-      -1,     7,     8,     9,   103,   126,    32,    33,    76,    77,
-      78,    10,    18,    42,    68,    11,    21,    46,   108,   147,
-     166,    12,    13,    14,    15,    98,    99,   100,   161,   153,
-     159,   171,   170,   142,    34
+      -1,     9,    10,    11,   108,   131,    34,    35,    81,    82,
+      83,    12,    20,    46,    73,    13,    23,    50,   113,   152,
+     171,    14,    15,    16,    17,   103,   104,   105,   166,   158,
+     164,   176,   175,   147,    36
   };
 
   const short int
   MC_Parser::yytable_[] =
   {
-      35,    22,    23,   177,   135,    83,    51,    71,    24,     1,
-      16,   111,    19,    40,   110,   104,   175,    47,    48,    49,
-      26,    27,    28,    29,    30,    31,   132,    84,     2,    95,
-     105,   118,   102,    37,   119,    72,     3,   163,   164,   136,
-     165,    96,    -7,   123,    67,    74,   198,    38,    80,    81,
-      82,   137,    87,    88,    89,    90,    91,    92,    93,   102,
-     143,   144,    39,   122,   145,     1,   144,     4,   181,   150,
-     109,   182,   138,   139,    60,    61,    62,    63,   184,    97,
-     181,   185,   144,   200,     2,   203,    22,    23,    43,    17,
-      41,    20,     3,    24,    25,    44,    45,   121,   154,   155,
-     156,   157,   199,    50,    64,    26,    27,    28,    29,    30,
-      31,    65,    53,    54,    55,    66,    56,    22,    23,   172,
-     173,   174,    57,     4,    24,    58,    59,    60,    61,    62,
-      63,    67,    69,     5,   112,    73,    26,    27,    28,    29,
-      30,    31,   186,    75,   187,    94,    52,    72,   178,   193,
-      85,   194,    54,    55,   101,    56,   106,   107,   114,   140,
-     179,    57,     5,   115,    58,    59,    60,    61,    62,    63,
-      57,   116,   117,    58,    59,    60,    61,    62,    63,   120,
-      55,   141,    56,   125,     6,   127,   129,   130,    57,     5,
-     131,    58,    59,    60,    61,    62,    63,    56,   133,   146,
-     151,   148,   149,    57,   152,   158,    58,    59,    60,    61,
-      62,    63,   160,   180,    58,    59,    60,    61,    62,    63,
-     162,   167,   168,   169,   176,   183,   188,   189,   190,   191,
-     192,   195,   196,   197,   181,   201,   202,    36,   113,    86,
-       6,   128,    70,   124,     0,    79,   134
+      39,    24,    25,   182,   140,    88,   116,    55,    26,     1,
+      76,    18,    21,   115,   100,    51,    52,    53,    44,   109,
+      28,    29,    30,    31,    32,    33,   101,    89,     2,   110,
+     180,   191,   107,   192,   107,    37,     3,   168,   169,   141,
+     170,    77,   128,    41,    -9,    79,    72,   114,    85,    86,
+      87,   142,    92,    93,    94,    95,    96,    97,    98,   148,
+     202,    38,   127,   123,   102,     1,   124,     4,   177,   178,
+     179,    61,   143,   144,    62,    63,    64,    65,    66,    67,
+      24,    25,   149,   149,     2,   150,   155,    26,    27,    42,
+      19,    22,     3,   186,   189,    45,   187,   190,   126,    28,
+      29,    30,    31,    32,    33,    62,    63,    64,    65,    66,
+      67,    64,    65,    66,    67,    24,    25,   159,   160,   161,
+     162,   186,    26,     4,   203,   197,    43,   198,    47,   117,
+      48,    49,    54,     5,    28,    29,    30,    31,    32,    33,
+      68,    69,    70,    71,    72,    74,    78,    80,   183,    56,
+      90,    99,    77,    57,    58,    59,   106,    60,   111,   145,
+     184,   112,   119,    61,   120,   121,    62,    63,    64,    65,
+      66,    67,     5,   122,   125,   130,   132,   134,   135,   138,
+     136,   146,   151,   156,     6,    58,    59,   153,    60,     5,
+       7,     8,   154,   157,    61,   167,   172,    62,    63,    64,
+      65,    66,    67,    59,   163,    60,   165,   174,   173,   181,
+     188,    61,   193,   185,    62,    63,    64,    65,    66,    67,
+      60,   194,   195,   196,   199,   200,    61,   201,   186,    62,
+      63,    64,    65,    66,    67,   205,    40,   204,   118,   137,
+       6,    91,    84,    75,   133,   129,     7,     8,   139
   };
 
-  const short int
+  const unsigned char
   MC_Parser::yycheck_[] =
   {
-       0,    11,    12,    11,    56,    11,   107,   107,    18,    65,
-     130,    33,   130,    30,    76,   227,   159,    22,    23,    24,
-      30,    31,    32,    33,    34,    35,   116,    33,    84,   118,
-      71,   247,   236,   246,   250,   247,    92,    31,    32,    91,
-      34,   130,   246,   105,   248,    50,   189,    30,    53,    54,
-      55,   103,    57,    58,    59,    60,    61,    62,    63,   236,
-     122,   247,    30,   104,   250,    65,   247,   123,   247,   250,
-     247,   250,   124,   125,    19,    20,    21,    22,   247,   168,
-     247,   250,   247,   250,    84,   250,    11,    12,    30,   209,
-     107,   209,    92,    18,    19,    30,   127,   102,   136,   137,
-     138,   139,   192,     3,   246,    30,    31,    32,    33,    34,
-      35,   158,     4,     5,     6,   249,     8,    11,    12,   155,
-     156,   157,    14,   123,    18,    17,    18,    19,    20,    21,
-      22,   248,    30,   189,   156,    30,    30,    31,    32,    33,
-      34,    35,    56,    30,    58,    30,   247,   247,   156,   181,
-     156,   183,     5,     6,    19,     8,    30,   249,   249,   211,
-     168,    14,   189,   249,    17,    18,    19,    20,    21,    22,
-      14,   249,   130,    17,    18,    19,    20,    21,    22,    30,
-       6,   233,     8,    30,   240,   231,   250,    30,    14,   189,
-      30,    17,    18,    19,    20,    21,    22,     8,   249,   249,
-      30,   250,   250,    14,   249,    47,    17,    18,    19,    20,
-      21,    22,   249,   221,    17,    18,    19,    20,    21,    22,
-      30,   247,   250,    32,    32,   249,   223,   250,   156,   130,
-     249,    32,   192,    31,   247,   250,    31,     7,    86,   249,
-     240,   109,    41,   106,    -1,    52,   118
+       0,    11,    12,    11,    56,    11,    33,   107,    18,    65,
+     107,   130,   130,    81,   118,    24,    25,    26,    30,   227,
+      30,    31,    32,    33,    34,    35,   130,    33,    84,    76,
+     164,    56,   236,    58,   236,   209,    92,    31,    32,    91,
+      34,   249,   110,   248,   248,    54,   250,   249,    57,    58,
+      59,   103,    61,    62,    63,    64,    65,    66,    67,   127,
+     194,   209,   109,   249,   168,    65,   252,   123,   160,   161,
+     162,    14,   124,   125,    17,    18,    19,    20,    21,    22,
+      11,    12,   249,   249,    84,   252,   252,    18,    19,    30,
+     209,   209,    92,   249,   249,   107,   252,   252,   107,    30,
+      31,    32,    33,    34,    35,    17,    18,    19,    20,    21,
+      22,    19,    20,    21,    22,    11,    12,   141,   142,   143,
+     144,   249,    18,   123,   252,   186,    30,   188,    30,   156,
+      30,   127,     3,   189,    30,    31,    32,    33,    34,    35,
+      30,   248,   158,   251,   250,    30,    30,    30,   156,   249,
+     156,    30,   249,     4,     5,     6,    19,     8,    30,   211,
+     168,   251,   251,    14,   251,   251,    17,    18,    19,    20,
+      21,    22,   189,   130,    30,    30,   231,   252,    30,   251,
+      30,   233,   251,    30,   240,     5,     6,   252,     8,   189,
+     246,   247,   252,   251,    14,    30,   249,    17,    18,    19,
+      20,    21,    22,     6,    47,     8,   251,    32,   252,    32,
+     251,    14,   223,   221,    17,    18,    19,    20,    21,    22,
+       8,   252,   156,   130,    32,   192,    14,    31,   249,    17,
+      18,    19,    20,    21,    22,    31,     9,   252,    91,   121,
+     240,   251,    56,    45,   114,   111,   246,   247,   123
   };
 
   const unsigned short int
   MC_Parser::yystos_[] =
   {
-       0,    65,    84,    92,   123,   189,   240,   252,   253,   254,
-     262,   266,   272,   273,   274,   275,   130,   209,   263,   130,
-     209,   267,    11,    12,    18,    19,    30,    31,    32,    33,
-      34,    35,   257,   258,   285,     0,   253,   246,    30,    30,
-      30,   107,   264,    30,    30,   127,   268,   285,   285,   285,
-       3,   107,   247,     4,     5,     6,     8,    14,    17,    18,
-      19,    20,    21,    22,   246,   158,   249,   248,   265,    30,
-     264,   107,   247,    30,   285,    30,   259,   260,   261,   258,
-     285,   285,   285,    11,    33,   156,   249,   285,   285,   285,
-     285,   285,   285,   285,    30,   118,   130,   168,   276,   277,
-     278,    19,   236,   255,   227,   259,    30,   249,   269,   247,
-     255,    33,   156,   254,   249,   249,   249,   130,   247,   250,
-      30,   285,   259,   255,   265,    30,   256,   231,   260,   250,
-      30,    30,   256,   249,   277,    56,    91,   103,   124,   125,
-     211,   233,   284,   255,   247,   250,   249,   270,   250,   250,
-     250,    30,   249,   280,   280,   280,   280,   280,    47,   281,
-     249,   279,    30,    31,    32,    34,   271,   247,   250,    32,
-     283,   282,   282,   282,   282,   283,    32,    11,   156,   168,
-     221,   247,   250,   249,   247,   250,    56,    58,   223,   250,
-     156,   130,   249,   271,   271,    32,   192,    31,   283,   256,
-     250,   250,    31,   250
+       0,    65,    84,    92,   123,   189,   240,   246,   247,   254,
+     255,   256,   264,   268,   274,   275,   276,   277,   130,   209,
+     265,   130,   209,   269,    11,    12,    18,    19,    30,    31,
+      32,    33,    34,    35,   259,   260,   287,   209,   209,     0,
+     255,   248,    30,    30,    30,   107,   266,    30,    30,   127,
+     270,   287,   287,   287,     3,   107,   249,     4,     5,     6,
+       8,    14,    17,    18,    19,    20,    21,    22,    30,   248,
+     158,   251,   250,   267,    30,   266,   107,   249,    30,   287,
+      30,   261,   262,   263,   260,   287,   287,   287,    11,    33,
+     156,   251,   287,   287,   287,   287,   287,   287,   287,    30,
+     118,   130,   168,   278,   279,   280,    19,   236,   257,   227,
+     261,    30,   251,   271,   249,   257,    33,   156,   256,   251,
+     251,   251,   130,   249,   252,    30,   287,   261,   257,   267,
+      30,   258,   231,   262,   252,    30,    30,   258,   251,   279,
+      56,    91,   103,   124,   125,   211,   233,   286,   257,   249,
+     252,   251,   272,   252,   252,   252,    30,   251,   282,   282,
+     282,   282,   282,    47,   283,   251,   281,    30,    31,    32,
+      34,   273,   249,   252,    32,   285,   284,   284,   284,   284,
+     285,    32,    11,   156,   168,   221,   249,   252,   251,   249,
+     252,    56,    58,   223,   252,   156,   130,   273,   273,    32,
+     192,    31,   285,   252,   252,    31
   };
 
   const unsigned short int
   MC_Parser::yyr1_[] =
   {
-       0,   251,   252,   252,   253,   253,   254,   255,   255,   256,
-     256,   257,   257,   257,   258,   259,   259,   260,   261,   253,
-     262,   263,   262,   264,   264,   265,   265,   262,   253,   266,
-     267,   268,   268,   269,   269,   270,   270,   271,   271,   271,
-     271,   253,   272,   253,   273,   253,   274,   253,   275,   276,
-     276,   278,   277,   277,   277,   277,   279,   279,   279,   279,
-     279,   279,   280,   280,   280,   281,   281,   282,   282,   283,
-     283,   283,   284,   284,   284,   284,   284,   284,   284,   285,
-     285,   285,   285,   285,   285,   285,   285,   285,   285,   285,
-     285,   285,   285,   285,   285,   285,   285,   285,   285,   285,
-     285,   285,   285
+       0,   253,   254,   254,   255,   255,   255,   255,   256,   257,
+     257,   258,   258,   259,   259,   259,   260,   261,   261,   262,
+     263,   255,   264,   265,   264,   266,   266,   267,   267,   264,
+     255,   268,   269,   270,   270,   271,   271,   272,   272,   273,
+     273,   273,   273,   255,   274,   255,   275,   255,   276,   255,
+     277,   278,   278,   280,   279,   279,   279,   279,   281,   281,
+     281,   281,   281,   282,   282,   282,   283,   283,   284,   284,
+     285,   285,   285,   286,   286,   286,   286,   286,   286,   286,
+     287,   287,   287,   287,   287,   287,   287,   287,   287,   287,
+     287,   287,   287,   287,   287,   287,   287,   287,   287,   287,
+     287,   287,   287,   287
   };
 
   const unsigned char
   MC_Parser::yyr2_[] =
   {
-       0,     2,     2,     3,     1,     1,     5,     0,     2,     1,
-       3,     1,     3,     1,     1,     1,     3,     1,     1,     1,
-       5,     0,     6,     2,     4,     0,     2,     7,     1,     7,
-       0,     1,     0,     0,     3,     3,     5,     1,     1,     1,
-       3,     1,     8,     1,     3,     1,     3,     1,     6,     1,
-       3,     0,     4,     5,     4,     4,     0,     3,     2,     5,
-       2,     3,     0,     3,     5,     0,     1,     0,     2,     0,
-       4,     3,     3,     3,     3,     3,     3,     5,     3,     1,
-       1,     1,     1,     1,     3,     3,     3,     3,     3,     3,
-       2,     3,     3,     3,     3,     5,     2,     2,     3,     3,
-       4,     3,     4
+       0,     2,     2,     3,     1,     1,     2,     3,     5,     0,
+       2,     1,     3,     1,     3,     1,     1,     1,     3,     1,
+       1,     1,     5,     0,     6,     2,     4,     0,     2,     7,
+       1,     7,     0,     1,     0,     0,     3,     3,     5,     1,
+       1,     1,     3,     1,     8,     1,     3,     1,     3,     1,
+       6,     1,     3,     0,     4,     5,     4,     4,     0,     3,
+       2,     2,     3,     0,     3,     5,     0,     1,     0,     2,
+       0,     4,     3,     3,     3,     3,     3,     3,     5,     3,
+       1,     1,     1,     1,     1,     3,     3,     3,     3,     3,
+       3,     2,     3,     3,     3,     3,     5,     2,     2,     3,
+       3,     4,     3,     4
   };
 
 
@@ -3405,33 +3423,33 @@ namespace MC {
   "UNIQUE", "UNLOCK", "UNSIGNED", "UPDATE", "USAGE", "USE", "USING",
   "UTC_DATE", "UTC_TIME", "UTC_TIMESTAMP", "VALUES", "VARBINARY",
   "VARCHAR", "VARYING", "WHEN", "WHERE", "WHILE", "WITH", "WRITE", "QUIT",
-  "FSUBSTRING", "FTRIM", "FDATE_ADD", "FDATE_SUB", "FCOUNT", "';'", "','",
-  "'.'", "'('", "')'", "$accept", "stmt_list", "stmt", "select_stmt",
-  "opt_where", "column_list", "select_expr_list", "select_expr",
-  "table_references", "table_reference", "table_factor", "delete_stmt",
-  "delete_opts", "delete_list", "opt_dot_star", "insert_stmt",
-  "insert_opts", "opt_into", "opt_col_names", "insert_vals_list",
-  "insert_vals", "create_index_stmt", "drop_index_stmt", "drop_table_stmt",
-  "create_table_stmt", "create_col_list", "create_definition", "$@1",
-  "column_atts", "opt_length", "opt_binary", "opt_uz", "opt_csc",
-  "data_type", "expr", YY_NULLPTR
+  "FSUBSTRING", "FTRIM", "FDATE_ADD", "FDATE_SUB", "FCOUNT", "show",
+  "desc", "';'", "','", "'.'", "'('", "')'", "$accept", "stmt_list",
+  "stmt", "select_stmt", "opt_where", "column_list", "select_expr_list",
+  "select_expr", "table_references", "table_reference", "table_factor",
+  "delete_stmt", "delete_opts", "delete_list", "opt_dot_star",
+  "insert_stmt", "insert_opts", "opt_into", "opt_col_names",
+  "insert_vals_list", "insert_vals", "create_index_stmt",
+  "drop_index_stmt", "drop_table_stmt", "create_table_stmt",
+  "create_col_list", "create_definition", "$@1", "column_atts",
+  "opt_length", "opt_binary", "opt_uz", "opt_csc", "data_type", "expr", YY_NULLPTR
   };
 
 #if YYDEBUG
   const unsigned short int
   MC_Parser::yyrline_[] =
   {
-       0,   311,   311,   312,   314,   315,   321,   327,   328,   330,
-     331,   334,   335,   336,   339,   342,   343,   346,   350,   355,
-     358,   363,   366,   371,   372,   376,   376,   378,   387,   388,
-     394,   397,   397,   400,   401,   404,   405,   408,   409,   410,
-     411,   415,   422,   427,   433,   439,   444,   449,   455,   461,
-     462,   465,   465,   474,   475,   476,   479,   480,   481,   482,
-     483,   484,   487,   488,   489,   492,   493,   496,   497,   500,
-     501,   502,   506,   507,   508,   509,   510,   511,   512,   519,
-     520,   521,   522,   523,   526,   527,   528,   529,   530,   531,
-     532,   533,   534,   535,   536,   537,   538,   539,   540,   543,
-     544,   545,   546
+       0,   312,   312,   313,   315,   316,   317,   318,   326,   332,
+     333,   335,   336,   339,   340,   341,   344,   347,   348,   351,
+     355,   360,   363,   368,   371,   376,   377,   381,   381,   383,
+     392,   393,   399,   402,   402,   405,   406,   409,   410,   413,
+     414,   415,   416,   420,   427,   432,   438,   444,   449,   454,
+     460,   466,   467,   470,   470,   479,   480,   481,   484,   485,
+     486,   487,   488,   491,   492,   493,   496,   497,   500,   501,
+     504,   505,   506,   510,   511,   512,   513,   514,   515,   516,
+     523,   524,   525,   526,   527,   530,   531,   532,   533,   534,
+     535,   536,   537,   538,   539,   540,   541,   542,   543,   544,
+     547,   548,   549,   550
   };
 
   // Print the state stack on the debug stream.
@@ -3476,8 +3494,8 @@ namespace MC {
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,    12,     2,     2,     2,    21,    16,     2,
-     249,   250,    19,    17,   247,    18,   248,    20,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,   246,
+     251,   252,    19,    17,   249,    18,   250,    20,     2,     2,
+       2,     2,     2,     2,     2,     2,     2,     2,     2,   248,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
@@ -3521,9 +3539,9 @@ namespace MC {
      214,   215,   216,   217,   218,   219,   220,   221,   222,   223,
      224,   225,   226,   227,   228,   229,   230,   231,   232,   233,
      234,   235,   236,   237,   238,   239,   240,   241,   242,   243,
-     244,   245
+     244,   245,   246,   247
     };
-    const unsigned int user_token_number_max_ = 491;
+    const unsigned int user_token_number_max_ = 493;
     const token_number_type undef_token_ = 2;
 
     if (static_cast<int>(t) <= yyeof_)
@@ -3536,8 +3554,8 @@ namespace MC {
 
 #line 6 "mc_parser.yy" // lalr1.cc:1167
 } // MC
-#line 3540 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:1167
-#line 548 "mc_parser.yy" // lalr1.cc:1168
+#line 3558 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:1167
+#line 552 "mc_parser.yy" // lalr1.cc:1168
 
 
 

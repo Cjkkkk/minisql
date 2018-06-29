@@ -203,7 +203,7 @@ void Buffer::CreateFile(string filename) {
 void Buffer::DeleteFile(string filename) {
 	int pos;
 	list<int>::iterator it;
-	for (it = this->Occupy_Block.begin(); it != this->Occupy_Block.end();) {
+ 	for (it = this->Occupy_Block.begin(); it != this->Occupy_Block.end();) {
 		if (this->buffer[*it].FileName == filename) {
 			pos = *it;
 			this->buffer[pos].BlockClear();				//�����ļ���buffer�еĿ�ȫ�����

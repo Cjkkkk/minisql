@@ -661,6 +661,10 @@ set<Addr> BpTree<K>::FindGreater(K k, bool EQ) {
 	else {
 		pos = this->FindFirstKey(k, Cp);
 	}
+    if(pos == -1){
+        ret.clear();
+        return ret;
+    }
 	this->FindNode(Cp, C);
 	while (1) {
 		for (i = pos; i < N - 1 && C.v[i] == '1'; i++) {

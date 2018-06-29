@@ -585,7 +585,9 @@ namespace MC {
         FTRIM = 488,
         FDATE_ADD = 489,
         FDATE_SUB = 490,
-        FCOUNT = 491
+        FCOUNT = 491,
+        show = 492,
+        desc = 493
       };
     };
 
@@ -1638,6 +1640,14 @@ namespace MC {
     symbol_type
     make_FCOUNT (const location_type& l);
 
+    static inline
+    symbol_type
+    make_show (const location_type& l);
+
+    static inline
+    symbol_type
+    make_desc (const location_type& l);
+
 
     /// Build a parser object.
     MC_Parser (MC_Scanner  &scanner_yyarg, MC_Driver  &driver_yyarg);
@@ -1723,7 +1733,7 @@ namespace MC {
   // number is the opposite.  If YYTABLE_NINF, syntax error.
   static const short int yytable_[];
 
-  static const short int yycheck_[];
+  static const unsigned char yycheck_[];
 
   // YYSTOS[STATE-NUM] -- The (internal number of the) accessing
   // symbol of state STATE-NUM.
@@ -1843,12 +1853,12 @@ namespace MC {
     enum
     {
       yyeof_ = 0,
-      yylast_ = 246,     ///< Last index in yytable_.
+      yylast_ = 248,     ///< Last index in yytable_.
       yynnts_ = 35,  ///< Number of nonterminal symbols.
-      yyfinal_ = 35, ///< Termination state number.
+      yyfinal_ = 39, ///< Termination state number.
       yyterror_ = 1,
       yyerrcode_ = 256,
-      yyntokens_ = 251  ///< Number of tokens.
+      yyntokens_ = 253  ///< Number of tokens.
     };
 
 
@@ -1860,7 +1870,7 @@ namespace MC {
 
 #line 6 "mc_parser.yy" // lalr1.cc:377
 } // MC
-#line 1864 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.hh" // lalr1.cc:377
+#line 1874 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.hh" // lalr1.cc:377
 
 
 

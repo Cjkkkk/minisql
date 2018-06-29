@@ -39,6 +39,7 @@ public:
 	vector<Keys>KS;
 public:
 	Record();
+	void clear();
 	int Findi(int c);
 	float Findf(int c);
 	string Finds(int c);
