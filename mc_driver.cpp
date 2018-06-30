@@ -107,29 +107,20 @@ void MC::MC_Driver::addIndexParam(std::string indexName, std::string tableName, 
 
 
 //清理table
-
-    // void createTable(MC::TableInfo *tableInfo){
-    // bool dropTable();
-    // void createIndex(MC::IndexInfo *indexInfo)
-    // bool dropIndex();
-    // bool insert_value(MC::InsertSTMT *insertStmt)
-    // bool update_Value();
-    // bool delete_Value();
-    // bool select_value();
 void MC::MC_Driver::Clear(int commandType){
     switch (commandType){
         case 0:
-            std::cout<<"clear create table statement"<<std::endl;
+            //std::cout<<"clear create table statement"<<std::endl;
             tableInfo = new TableInfo();
             break;
         case 1:
         //droptable
-            std::cout<<"clear drop table statement"<<std::endl;
+            //std::cout<<"clear drop table statement"<<std::endl;
             tableInfo = new TableInfo();
             break;
         case 2:
             //createIndex
-            std::cout<<"clear create index statement"<<std::endl;
+            //std::cout<<"clear create index statement"<<std::endl;
             indexInfo->indexID = -1;
             indexInfo->type = 0;
             indexInfo->indexName = "";
@@ -138,7 +129,7 @@ void MC::MC_Driver::Clear(int commandType){
             break;
         case 3:
         //insert_value
-            std::cout<<"clear insert statement"<<std::endl;
+            //std::cout<<"clear insert statement"<<std::endl;
             condStack.top = 0;
             condStack.colunm.clear();
             stmt->v_list->clear();
@@ -146,7 +137,7 @@ void MC::MC_Driver::Clear(int commandType){
             break;
         case 4:
         //select value
-            std::cout<<"clear select statement"<<std::endl;
+            //std::cout<<"clear select statement"<<std::endl;
             condStack.top = 0;
             condStack.colunm.clear();
             stmt->is_select_all = false;
@@ -156,7 +147,7 @@ void MC::MC_Driver::Clear(int commandType){
             stmt->colunmId->clear();
             break;
         case 5:
-            std::cout <<"clear delete statement"<<std::endl;
+            //std::cout <<"clear delete statement"<<std::endl;
             condStack.top = 0;
             condStack.colunm.clear();
             stmt->c_list->clear();
@@ -174,21 +165,26 @@ void MC::MC_Driver::Clear(int commandType){
     
 }
 //建表添加属性
-void MC::MC_Driver::addColunm(std::string colunmName,int attributype,int constraint){
-    //是否超过最大属性数目
-    if(tableInfo->attributeNum == 32){
-        std::cout<<"exceed maximum number of attribute\n";
-    }
+bool MC::MC_Driver::addColunm(std::string colunmName,int attributype,int constraint){
     //是否重名
-    for(int i = 0 ; i < tableInfo->attributeNum ; i++){
-        if(tableInfo->attributeName[i] == colunmName){//已经存在这个属性
-            std::cout << "attribute name "<< colunmName <<" occupied\n";
-            return;
-        }
+    auto it = tableInfo->getID.find(colunmName);
+    if(it!=tableInfo->getID.end()){
+        std::cout<<"duplicate colunm "<<colunmName<<std::endl;
+        return false;
+    }
+    //是否超过最大属性数目
+    if(tableInfo->attributeNum >= 32){
+        std::cout<<"exceed maximum number of attribute\n";
+        return false;
     }
     
     //检查类型是否没有错误
     if(attributype == 50000 || attributype == 90000 || attributype > 120000){
+        if(attributype - 120000 > 255){
+            //长度太长
+            std::cout<<"length of char type can not be longer than 255"<<std::endl;
+            return false;
+        }
         //检查属性限制是否错误
         //0代表没有限制 1代表not null 2代表unique 3代表primary key
         if(constraint == 0 || constraint == 1 || constraint == 2 || constraint == 3){
@@ -204,18 +200,18 @@ void MC::MC_Driver::addColunm(std::string colunmName,int attributype,int constra
                 std::pair<int,std::string> p = std::make_pair(tableInfo->attributeNum, colunmName);
                 tableInfo->indexInfo.insert(p);
             }
-
             tableInfo->attributeNum++;
+            return true;
         }
         else{
             std::cout << "attribute constraint of " <<colunmName<<" unrecognized\n";
-            return;
+            return false;
         }
         //tableInfo->type_and_constraint.
     }else{
         //输入类型错误
         std::cout << "attributetype of " <<colunmName<<" unrecognized\n";
-        return;
+        return false;
     }
 }
 

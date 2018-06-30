@@ -201,3 +201,25 @@ void IndexManager::LoadAllBpTree(vector<IndexInfo> Is) {
         }
     }
 }
+
+bool IndexManager::AlreadyIn(IndexInfo I, condition C){
+	string filename = Direction + I.tableName + "_" + I.indexName + "_idx.dat";
+	int pos;
+	if (I.type == 50000) {
+		BpTree<int>& Tree = FindBpTree_I(filename);
+		IndexNode<int> Node(Tree.SeekN());
+		pos = Tree.FindKey(C.key.intV, Node);
+	}
+	else if (I.type == 90000) {
+		BpTree<float>& Tree = FindBpTree_F(filename);
+		IndexNode<float> Node(Tree.SeekN());
+		pos = Tree.FindKey(C.key.floatV, Node);
+
+	}
+	else if (I.type > 120000) {
+		BpTree<string>& Tree = FindBpTree_S(filename);
+		IndexNode<string> Node(Tree.SeekN());
+		pos = Tree.FindKey(C.key.charV, Node);
+	}
+	return pos != -1;
+}

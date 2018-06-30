@@ -31,7 +31,7 @@ public:
     std::ostream& print(std::ostream &stream);
 
     void addIndexParam(std::string indexName, std::string tableName, std::string colunmName);
-    void addColunm(std::string colunmName,int attributype,int constraint);
+    bool addColunm(std::string colunmName,int attributype,int constraint);
     void addConstraint(std::string colunmname,int constraint);
     void addTableInfoTableName(std::string n){
         tableInfo->tableName = n;
@@ -121,7 +121,7 @@ public:
     IndexInfo *indexInfo;
     TableInfo *tableInfo;
     STMT *stmt;
-
+    int number = 0;
     //处理逆波兰的堆栈
     struct ConditionStack condStack;
 private:

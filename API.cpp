@@ -81,15 +81,12 @@ void API::dropTable(TableInfo *tableInfo){
 };
 void API::createIndex(IndexInfo *indexInfo){
     std::cout <<"create index ------------------\n";
-    // idi.type = CM.TableInfoList[i]->type[it->first];
-    // idi.indexName = it->second;
-    // idi.tableName = tableInfo->tableName;
-    // IM.CreateIndexFile(idi);//删除indexfile
     if(!CM.createIndex(indexInfo))return;//建立catalog索引
     int pos = CM.existTable(indexInfo->tableName);
     
     auto it = CM.TableInfoList[pos]->getID.find(indexInfo->colunmName);
     indexInfo->type = CM.TableInfoList[pos]->type[it->second];
+    indexInfo->indexID = it->second;
     IM.CreateIndexFile(*indexInfo);//建立indexfile
 
     //将之前插入table的值插入indexfile
@@ -97,7 +94,10 @@ void API::createIndex(IndexInfo *indexInfo){
     struct value v;
     string filename = RM.Direction + indexInfo->tableName + "_rcd.dat";
     RecordSet& R = RM.FindRecordSet(filename);
+    int i = 0;
     while(1){
+        std::cout<<i<<std::endl;
+        i++;
         int result = RM.ReturnKP(*indexInfo,p,v);
         if(result == 0)continue;
         else if(result == -1)break;
@@ -138,7 +138,7 @@ void API::descTable(std::string tableName){
     CM.descTable(tableName);
 }
 void API::insert_value(STMT *stmt){
-    std::cout <<"insert value------------------\n";
+    //std::cout <<"insert value------------------\n";
     int pos = CM.existTable(stmt->tableName);
     if(!checkInsert(stmt,pos))return;
     //检查无误
@@ -150,7 +150,7 @@ void API::insert_value(STMT *stmt){
     while(it != T->indexInfo.end())
     {
         //将每个索引插入b+树
-        std::cout << "find index\n";
+       // std::cout << "find index\n";
         IndexInfo I;
         I.tableName = stmt->tableName;
         I.indexName = it->second;
@@ -218,14 +218,6 @@ void API::delete_Value(STMT *stmt){
 
 bool API::add_ColID_Index(STMT* stmt,TableInfo* T){
     for(int i = 0 ; i < stmt->c_list->size();i++){
-//        auto it = T->getID.find(stmt->c_list->at(i).colunmName);
-//        //增加colunmID
-//        if(it == T->getID.end()){
-//            cout<<"select fail can not find colunm "<< stmt->c_list->at(i).colunmName<<std::endl;
-//            return false;
-//        }
-//        int colID = it->second;
-//        stmt->c_list->at(i).colunmID = colID;
         //查看是否是index
         auto I_iter = T->indexInfo.find(stmt->c_list->at(i).colunmID);
         if(I_iter != T->indexInfo.end()){
@@ -257,11 +249,6 @@ void API::select_value(STMT *stmt){
         AS = RM.FindSuchRecord(*stmt);
     }
     RM.PrintRecord(*stmt,AS);
-    auto it = AS.begin();
-    while(it!= AS.end()){
-        std::cout<<"dddd"<<it->FileOff<<std::endl;
-        it++;
-    }
     printStatement(stmt);
     return;
 };
@@ -270,7 +257,7 @@ void API::printStatement(STMT* stmt){
     for(int i = 0 ; i<stmt->colunmList->size();i++){
         std::cout<<stmt->colunmList->at(i)<<std::endl;
     }
-    std::cout<<"constraint=-----------"<<std::endl;
+    //std::cout<<"constraint=-----------"<<std::endl;
     for(int i = 0 ;i < stmt->c_list->size() ; i++){
         if(stmt->c_list->at(i).type == 50000)std::cout << stmt->c_list->at(i).colunmName<< stmt->c_list->at(i).key.intV << stmt->c_list->at(i).op<<std::endl;
         else if(stmt->c_list->at(i).type == 90000)std::cout << stmt->c_list->at(i).colunmName<<stmt->c_list->at(i).key.floatV << stmt->c_list->at(i).op<<std::endl;
@@ -297,16 +284,59 @@ bool API::checkInsert(STMT *stmt,int pos){
         int insertType = stmt->v_list->at(i).type;
         int checkType = info->type[i];
         if(insertType != checkType ){
-            if(checkType > 120000 && insertType > 120000 && insertType <= checkType)continue;
-            std::cout<<info->attributeName[i]<<" type does not match"<< std::endl;
-            std::cout << "insert type is "<<insertType<<" while check type is "<<checkType<<std::endl;
-            error = true;
+            if(checkType > 120000 && insertType > 120000 && insertType <= checkType){}
+            else{
+                std::cout<<info->attributeName[i]<<" type does not match"<< std::endl;
+                std::cout << "insert type is "<<insertType<<" while check type is "<<checkType<<std::endl;
+                error = true;
+            }
+        }
+        //检查是否违反unique和index和PRIMARY KEY
+        int contraint = info->constraint[i];
+        if(contraint == 2 || contraint == 3 || contraint == 4){
+            struct condition c;
+            c.type = info->type[i];
+            c.op = 0;
+            c.colunmID = i;
+            c.colunmName = info->attributeName[i];
+            c.key = stmt->v_list->at(i);
+            if(contraint == 2){
+                STMT S;
+                S.tableName = info->tableName;
+                //分配内存
+                S.colunmList = new std::vector<std::string>();
+                S.colunmId = new std::vector<int>();
+                S.c_list = new std::vector<struct condition>();
+                //将值送入
+                S.colunmList->push_back(info->attributeName[i]);
+                S.colunmId->push_back(i);
+                S.c_list->push_back(c);
+                //查找RM
+                set<Addr> ps = RM.FindSuchRecord(S);
+                if(!ps.empty()){
+                    //之前存过这个
+                    std::cout<<"duplicate value at "<<i<<" colunm"<<std::endl;
+                    return false;
+                }
+            }
+            else if(contraint == 3 || contraint == 4){
+                IndexInfo I;
+                I.tableName = info->tableName;
+                auto it = info->indexInfo.find(i);
+                I.indexName = it->second;
+                I.type = info->type[i];
+                if(IM.AlreadyIn(I,c)){
+                    std::cout<<"duplicate value at "<<i<<" colunm"<<std::endl;
+                    return false;
+                }
+            }
         }
     }
     if(error){
         std::cout<<"error occured"<<std::endl;
         return false;
     }
+
     return true;
 }
 
@@ -386,8 +416,11 @@ bool API::checkSelect(STMT* stmt,int pos){
     //为选择的列名增加colunmID
     //检查是不是selectall
     if(stmt->is_select_all){
-        //do nothing
-        //不需要加colunmlistID
+        for(int i = 0 ; i < info->attributeName.size() ; i++){
+            //全部选中
+            //增加全部的id
+            stmt->colunmId->push_back(i);
+        }
     }else{
         for(int i = 0 ; i < stmt->colunmList->size() ; i ++){
             //增加colunmid
@@ -401,13 +434,6 @@ bool API::checkSelect(STMT* stmt,int pos){
                 stmt->colunmId->push_back(it->second);
             }
         }
-        //
-//        std::cout<< "show colunm id"<<std::endl;
-//        for(int i = 0 ; i < stmt->colunmList->size() ; i ++){
-//            std::cout<< stmt->colunmId->at(i)<<std::endl;
-//        }
-//        std::cout<< "end colunm id"<<std::endl;
-//        std::cout<<"id loaded"<<std::endl;
     }
 
     return true;

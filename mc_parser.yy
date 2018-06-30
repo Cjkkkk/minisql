@@ -309,8 +309,8 @@
 %%
 
 
-stmt_list: stmt ';' { std::cout<<"minisql > ";}
-  | stmt_list stmt ';' {std::cout<<"minisql > ";};
+stmt_list: stmt ';' {driver.number++;if(driver.number % 1000 == 0){std::cout<<driver.number<<std::endl;}}
+  | stmt_list stmt ';' {driver.number++;if(driver.number % 1000 == 0){std::cout<<driver.number<<std::endl;}};
 
 stmt: select_stmt { API::select_value(driver.stmt);driver.Clear(4);}
     |QUIT {std::cout<<"quit"<<std::endl;API::save();return 0;}
@@ -410,9 +410,9 @@ insert_vals_list: '(' insert_vals ')' {  }
    | insert_vals_list ',' '(' insert_vals ')' {  }
 
 insert_vals:
-     INTNUM { std::cout<< $1 << std::endl;driver.addValue($1);}
-    | APPROXNUM { std::cout<< $1 << std::endl;driver.addValue($1);}
-    | STRING { std::cout<< $1 << std::endl;driver.addValue($1);}
+     INTNUM { driver.addValue($1);}
+    | APPROXNUM { driver.addValue($1);}
+    | STRING { driver.addValue($1);}
      | insert_vals ',' insert_vals { }
    ;
 
@@ -471,7 +471,7 @@ create_definition: {
                     //driver.emit("STARTCOL"); 
                     } NAME data_type column_atts
                    { //driver.emit("COLUMNDEF");
-                   driver.addColunm($2,$3,$4);
+                   if(!driver.addColunm($2,$3,$4)){return 1;};
                    std::cout<<"i am datatype"<<$3<<std::endl;
                    //std::cout << $2 <<" "<< $3 <<" " << $4 << std::endl;
                    }

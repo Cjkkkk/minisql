@@ -3,7 +3,7 @@
 #include <string>
 #include <list>
 #define BLOCK_SIZE  4096
-#define MAX_BLOCKS 64
+#define MAX_BLOCKS 640
 using namespace std;
 
 struct Addr{

@@ -166,7 +166,6 @@ void catalog::writeTabletoFile(TableInfo* tableInfo,std::ofstream& tablelist){
     // return tablelist;
 }
 bool catalog::newTable(TableInfo* tableInfo){
-    if(tableInfo->attributeNum>32)return false;
     tableNumber++; 
     if(anychangeornot == false)anychangeornot = true;
     std::ofstream tablelist("./file/catalog/table.dat", std::ios::out | std::ios::binary | std::ios::in);

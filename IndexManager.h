@@ -26,6 +26,7 @@ public:
 	void DeleteSuchKey(IndexInfo I, Addr p, value v);		//deleteʱ��
 	void SaveAllBpTree(void);
 	void LoadAllBpTree(vector<IndexInfo> Is);
+	bool AlreadyIn(IndexInfo I, condition C);
 };
 
 #endif

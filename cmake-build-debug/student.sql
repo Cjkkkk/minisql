@@ -10,3 +10,5 @@ insert into student values("jxc", 60, 1.5);
 insert into student values("ljj", 10, 1.4);
 insert into student values("zy", 15, 1.65);
 insert into student values("dlf", 30, 1.7);
+
+delete from student where name > "fuck" and height < 1.6 and age != 0;

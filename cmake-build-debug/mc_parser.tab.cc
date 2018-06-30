@@ -2357,13 +2357,13 @@ namespace MC {
             {
   case 2:
 #line 312 "mc_parser.yy" // lalr1.cc:859
-    { std::cout<<"minisql > ";}
+    {driver.number++;if(driver.number % 1000 == 0){std::cout<<driver.number<<std::endl;}}
 #line 2362 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 3:
 #line 313 "mc_parser.yy" // lalr1.cc:859
-    {std::cout<<"minisql > ";}
+    {driver.number++;if(driver.number % 1000 == 0){std::cout<<driver.number<<std::endl;}}
 #line 2368 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
@@ -2531,19 +2531,19 @@ namespace MC {
 
   case 39:
 #line 413 "mc_parser.yy" // lalr1.cc:859
-    { std::cout<< yystack_[0].value.as< int > () << std::endl;driver.addValue(yystack_[0].value.as< int > ());}
+    { driver.addValue(yystack_[0].value.as< int > ());}
 #line 2536 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 40:
 #line 414 "mc_parser.yy" // lalr1.cc:859
-    { std::cout<< yystack_[0].value.as< float > () << std::endl;driver.addValue(yystack_[0].value.as< float > ());}
+    { driver.addValue(yystack_[0].value.as< float > ());}
 #line 2542 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 41:
 #line 415 "mc_parser.yy" // lalr1.cc:859
-    { std::cout<< yystack_[0].value.as< std::string > () << std::endl;driver.addValue(yystack_[0].value.as< std::string > ());}
+    { driver.addValue(yystack_[0].value.as< std::string > ());}
 #line 2548 "/home/kk/CLionProjects/mini/cmake-build-debug/mc_parser.tab.cc" // lalr1.cc:859
     break;
 
@@ -2641,7 +2641,7 @@ namespace MC {
   case 54:
 #line 473 "mc_parser.yy" // lalr1.cc:859
     { //driver.emit("COLUMNDEF");
-                   driver.addColunm(yystack_[2].value.as< std::string > (),yystack_[1].value.as< int > (),yystack_[0].value.as< int > ());
+                   if(!driver.addColunm(yystack_[2].value.as< std::string > (),yystack_[1].value.as< int > (),yystack_[0].value.as< int > ())){return 1;};
                    std::cout<<"i am datatype"<<yystack_[1].value.as< int > ()<<std::endl;
                    //std::cout << $2 <<" "<< $3 <<" " << $4 << std::endl;
                    }

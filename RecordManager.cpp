@@ -34,15 +34,15 @@ int RecordManager::ReturnKP(IndexInfo I, Addr p, value& v) {
 	int Found = RS.FindRecord(p, R);	//�ҳ���Ӧ��¼
 	//RS.Addp(p);						//��ַ����
 	//�������������͸�value�Ĳ�ͬ������ֵ
-	if (RS.TypeTable[I.indexID] == INT) {
+	if (I.type == 50000) {
 		v.type = 50000;					//50000����Ŀ�����INT���͵Ķ���
 		v.intV = R.Findi(I.indexID);
 	}
-	else if (RS.TypeTable[I.indexID] == FLOAT) {
+	else if (I.type == 90000) {
 		v.type = 90000;					//90000����Ŀ�����FLOAT���͵Ķ���
 		v.floatV = R.Findf(I.indexID);
 	}
-	else if (RS.TypeTable[I.indexID] == STRING) {
+	else if (I.type > 120000) {
 		v.type = 130000;				//120000+����Ŀ�����STRING���͵Ķ���
 		v.charV = R.Finds(I.indexID);
 	}
@@ -59,8 +59,10 @@ set<Addr> RecordManager::FindSuchRecord(STMT S) {
 		int Found = RS.FindRecord(p, R);
 		if (Found == -1)
 			break;					//�Ѿ������¼�ļ�ĩβ�ˣ�����ѭ��
-		if (Found == 0)
-			continue;				//������¼�Ѿ�����ɾ����ֱ�Ӳ鿴��һ��
+		if (Found == 0){
+            RS.Addp(p);
+            continue;
+        }
 		else {						//������¼��Ч�����������
 			bool flag = true;
 			int i;
@@ -134,12 +136,43 @@ void RecordManager::InsertSuchRecord(STMT S, Addr& p) {
 }
 
 void RecordManager::PrintRecord(STMT S, set<Addr> ps) {
-	string filename = Direction + S.tableName + "_rcd.dat";
-	RecordSet& RS = this->FindRecordSet(filename);
-	Record R;
-	cout << "To be done..." << endl;
+    string filename = Direction + S.tableName + "_rcd.dat";
+    RecordSet& RS = this->FindRecordSet(filename);
+    Record R;
+    //cout << "To be done..." << endl;
+    vector<string>::iterator cit = S.colunmList->begin();
+    while (cit != S.colunmList->end()) {
+        cout.width(10);
+        cout.setf(ios::left);
+        cout << *cit;
+        cit++;
+    }
+    cout << endl;
+    set<Addr>::iterator pit = ps.begin();
+    while (pit != ps.end()) {
+        cout.width(1);
+        RS.FindRecord(*pit, R);
+        vector<int>::iterator vit = S.colunmId->begin();
+        while (vit != S.colunmId->end()) {
+            cout.width(10);
+            cout.setf(ios::left);
+            if (RS.TypeTable[*vit] == INT) {
+                cout << R.Findi(*vit);
+            }
+            else if (RS.TypeTable[*vit] == FLOAT) {
+                cout << R.Findf(*vit);
+            }
+            else if (RS.TypeTable[*vit] == STRING) {
+                string temp1 = R.Finds(*vit);
+				string temp2 = temp1.substr(1, temp1.length()-2);
+                cout << temp2;
+            }
+            vit++;
+        }
+        cout << endl;
+		pit++;
+    }
 }
-
 void RecordManager::DeleteSuchRecord(STMT S, set<Addr> ps) {
 	string filename = Direction + S.tableName + "_rcd.dat";
 	RecordSet& RS = this->FindRecordSet(filename);
