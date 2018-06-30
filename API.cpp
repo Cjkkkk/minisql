@@ -149,8 +149,6 @@ void API::insert_value(STMT *stmt){
     it = T->indexInfo.begin();
     while(it != T->indexInfo.end())
     {
-        //将每个索引插入b+树
-       // std::cout << "find index\n";
         IndexInfo I;
         I.tableName = stmt->tableName;
         I.indexName = it->second;
@@ -184,7 +182,7 @@ void API::delete_Value(STMT *stmt){
     }
     auto it = S.begin();
     while(it!= S.end()){
-        std::cout<<"dddd"<<it->FileOff<<std::endl;
+        //std::cout<<"dddd"<<it->FileOff<<std::endl;
         it++;
     }
     if(T->indexInfo.size() > 0){
@@ -212,7 +210,7 @@ void API::delete_Value(STMT *stmt){
             }
         }
     }
-    printStatement(stmt);
+    //printStatement(stmt);
     return;
 };
 
@@ -229,7 +227,7 @@ bool API::add_ColID_Index(STMT* stmt,TableInfo* T){
 }
 
 void API::select_value(STMT *stmt){
-    std::cout <<"select value------------------\n";
+    //std::cout <<"select value------------------\n";
     int pos = CM.existTable(stmt->tableName);
     if(!checkSelect(stmt,pos))return;
     TableInfo* T = CM.TableInfoList[pos];

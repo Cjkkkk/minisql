@@ -2,8 +2,8 @@
 #define BUFFER_H 1
 #include <string>
 #include <list>
-#define BLOCK_SIZE  4096
-#define MAX_BLOCKS 640
+#define BLOCK_SIZE  8192
+#define MAX_BLOCKS 5120
 using namespace std;
 
 struct Addr{
