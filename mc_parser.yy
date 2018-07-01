@@ -309,8 +309,8 @@
 %%
 
 
-stmt_list: stmt ';' {driver.number++;if(driver.number % 1000 == 0){std::cout<<driver.number<<std::endl;}}
-  | stmt_list stmt ';' {driver.number++;if(driver.number % 1000 == 0){std::cout<<driver.number<<std::endl;}};
+stmt_list: stmt ';' {std::cout<<"minisql>";driver.number++;if(driver.number % 1000 == 0){std::cout<<driver.number<<std::endl;}}
+  | stmt_list stmt ';' {std::cout<<"minisql>";driver.number++;if(driver.number % 1000 == 0){std::cout<<driver.number<<std::endl;}};
 
 stmt: select_stmt { API::select_value(driver.stmt);driver.Clear(4);}
     |QUIT {std::cout<<"quit"<<std::endl;API::save();return 0;}

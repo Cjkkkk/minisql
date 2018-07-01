@@ -11,15 +11,11 @@ main( const int argc, const char **argv )
     MC::MC_Driver driver;
     API::init();
     std::cout << "minisql > ";
-   /** check for the right # of arguments **/
    if(argc == 1){//  ./minisql
        driver.parse( std::cin );
    }
    else if( argc == 2 )// ./minisql -h
    {
-      /** instantiate driver object **/
-      /** example for piping input from terminal, i.e., using cat **/ 
-      /** simple help menu **/
       if( std::strncmp( argv[ 1 ], "-h", 2 ) == 0 )
       {
          std::cout << "use no flag for pipe to std::cin\n";
