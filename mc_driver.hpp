@@ -81,18 +81,7 @@ public:
     }
 
     void oppop(int op){
-//        std::cout << "pop op"<<std::endl;
-//        std::cout<<condStack.top<<std::endl;
-        std::cout<<"type : "<< op << std::endl;
-        // for(int i = 0 ; i < condStack.top;i++){
-        //     std::cout<<"in stack: "<<condStack.colunm[i]<<std::endl;
-        // }
-        // if(condStack.colunm[stmt->colunmList->size()] == ""){
-        //     std::cout <<condStack.colunm.size() <<"error !!!!!!!!\n";
-        //     return;
-        // }
         std::string c = condStack.colunm[condStack.top-1];
-        std::cout<<"!"<<std::endl;
         struct condition cl;
         cl.colunmName = c;
         cl.op = op;
@@ -102,17 +91,17 @@ public:
             //int
             cl.key.intV = condStack.tempInt;
             stmt->c_list->push_back(cl);
-            std::cout<<cl.key.type<<" "<<cl.key.intV<<std::endl;
+            //std::cout<<cl.key.type<<" "<<cl.key.intV<<std::endl;
         }else if(condStack.stackTopType == 90000){
             //float
             cl.key.floatV = condStack.tempFloat;
             stmt->c_list->push_back(cl);
-            std::cout<<cl.key.type<<" "<<cl.key.floatV<<std::endl;
+            //std::cout<<cl.key.type<<" "<<cl.key.floatV<<std::endl;
         }else{
             //string
             cl.key.charV = condStack.tempString;
             stmt->c_list->push_back(cl);
-            std::cout<<cl.key.type<<" "<<cl.key.charV<<std::endl;
+            //std::cout<<cl.key.type<<" "<<cl.key.charV<<std::endl;
         }
         
     }

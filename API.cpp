@@ -94,10 +94,7 @@ void API::createIndex(IndexInfo *indexInfo){
     struct value v;
     string filename = RM.Direction + indexInfo->tableName + "_rcd.dat";
     RecordSet& R = RM.FindRecordSet(filename);
-    int i = 0;
     while(1){
-        std::cout<<i<<std::endl;
-        i++;
         int result = RM.ReturnKP(*indexInfo,p,v);
         if(result == 0)continue;
         else if(result == -1)break;
@@ -105,7 +102,6 @@ void API::createIndex(IndexInfo *indexInfo){
         R.Addp(p);
         std::cout << p.BlockNum <<"\t"<<p.FileOff<<std::endl;
     }
-    std::cout <<"end index ------------------\n";
 };
 void API::dropIndex(IndexInfo *indexInfo){
     for(int i = 0 ; i < CM.tableNumber ; i ++){
@@ -114,8 +110,6 @@ void API::dropIndex(IndexInfo *indexInfo){
         while(it != CM.TableInfoList[i]->indexInfo.end())
         {
             //检查每个表上indexName是否被占用
-            std::cout<<"index:"<<it->second<<std::endl;
-            std::cout<<indexInfo->indexName<<it->second<<std::endl;
             if(indexInfo->indexName == it->second){
                 indexInfo->tableName = CM.TableInfoList[i]->tableName;
                 // indexInfo->colunmName = CM.TableInfoList[i]->attributeName[it->first];
@@ -138,7 +132,6 @@ void API::descTable(std::string tableName){
     CM.descTable(tableName);
 }
 void API::insert_value(STMT *stmt){
-    //std::cout <<"insert value------------------\n";
     int pos = CM.existTable(stmt->tableName);
     if(!checkInsert(stmt,pos))return;
     //检查无误
@@ -161,7 +154,6 @@ void API::insert_value(STMT *stmt){
 }
 // bool API::update_Value(STMT *stmt){};
 void API::delete_Value(STMT *stmt){
-    std::cout <<"delete value------------------\n";
     int pos = CM.existTable(stmt->tableName);
     if(!checkDelete(stmt,pos))return;
     TableInfo* T = CM.TableInfoList[pos];
@@ -182,7 +174,6 @@ void API::delete_Value(STMT *stmt){
     }
     auto it = S.begin();
     while(it!= S.end()){
-        //std::cout<<"dddd"<<it->FileOff<<std::endl;
         it++;
     }
     if(T->indexInfo.size() > 0){
@@ -247,7 +238,7 @@ void API::select_value(STMT *stmt){
         AS = RM.FindSuchRecord(*stmt);
     }
     RM.PrintRecord(*stmt,AS);
-    printStatement(stmt);
+    //printStatement(stmt);
     return;
 };
 
@@ -351,12 +342,10 @@ bool API::checkDelete(STMT* stmt,int pos){
         //增加colunmid
         auto it = info->getID.find(stmt->c_list->at(i).colunmName);
         if(it==info->getID.end()){
-            cout<<" not found 2"<<endl;
             std::cout<<"colunm "<< stmt->c_list->at(i).colunmName << "does not exist"<<std::endl;
             return false;
         }
         else{
-            std::cout<<"id："<< it->second <<std::endl;
             stmt->c_list->at(i).colunmID = it->second;
         }
         //先检查类型
@@ -373,7 +362,6 @@ bool API::checkDelete(STMT* stmt,int pos){
             return false;
         }
     }
-    std::cout<<"id loaded"<<std::endl;
     return true;
 }
 

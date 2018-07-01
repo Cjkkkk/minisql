@@ -309,8 +309,8 @@
 %%
 
 
-stmt_list: stmt ';' {std::cout<<"minisql>";driver.number++;if(driver.number % 1000 == 0){std::cout<<driver.number<<std::endl;}}
-  | stmt_list stmt ';' {std::cout<<"minisql>";driver.number++;if(driver.number % 1000 == 0){std::cout<<driver.number<<std::endl;}};
+stmt_list: stmt ';' {std::cout<<"minisql > ";driver.number++;if(driver.number % 1000 == 0){std::cout<<driver.number<<std::endl;}}
+  | stmt_list stmt ';' {std::cout<<"minisql > ";driver.number++;if(driver.number % 1000 == 0){std::cout<<driver.number<<std::endl;}};
 
 stmt: select_stmt { API::select_value(driver.stmt);driver.Clear(4);}
     |QUIT {std::cout<<"quit"<<std::endl;API::save();return 0;}
@@ -332,7 +332,7 @@ stmt: select_stmt { API::select_value(driver.stmt);driver.Clear(4);}
 opt_where: /* nil */ 
    | WHERE expr { };
 
-column_list: NAME { std::cout<<$1<<std::endl; }
+column_list: NAME {  }
   | column_list ',' NAME  {  $$ = $1 + 1; }
   ;
 
